@@ -1,0 +1,3564 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamilselvan - Full-Stack Web Developer & Python Engineer Resume</title>
+  
+  <!-- Google Fonts: Space Grotesk (Tech Headings), Plus Jakarta Sans (Body), JetBrains Mono (Code/Dates) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ===================================================================== */
+    :root {
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Dark Theme (Default) */
+      --bg-base: #070b14;
+      --bg-surface: #0e1526;
+      --bg-surface-elevated: #162035;
+      --bg-surface-hover: #1e2c47;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-subtle: rgba(255, 255, 255, 0.04);
+      --border-accent: rgba(56, 189, 248, 0.35);
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --text-highlight: #38bdf8;
+
+      --accent-primary: #0284c7;
+      --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      --accent-gradient-emerald: linear-gradient(135deg, #34d399 0%, #0284c7 100%);
+      --accent-gradient-amber: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+      
+      --accent-tag-bg: rgba(56, 189, 248, 0.1);
+      --accent-tag-text: #38bdf8;
+      --accent-tag-border: rgba(56, 189, 248, 0.22);
+
+      --badge-green-bg: rgba(34, 197, 94, 0.12);
+      --badge-green-text: #4ade80;
+      --badge-green-border: rgba(34, 197, 94, 0.25);
+
+      --card-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-color);
+      --card-shadow-hover: 0 20px 42px -12px rgba(56, 189, 248, 0.16), 0 0 0 1px var(--border-accent);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --section-spacing: 2.75rem;
+      --bg-nav-glass: rgba(14, 21, 38, 0.88);
+      --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f4f6fa;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f8fafc;
+      --bg-surface-hover: #edf2f7;
+      --bg-nav-glass: rgba(255, 255, 255, 0.92);
+      --border-color: rgba(15, 23, 42, 0.1);
+      --border-subtle: rgba(15, 23, 42, 0.05);
+      --border-accent: rgba(2, 132, 199, 0.35);
+
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --text-highlight: #0284c7;
+
+      --accent-primary: #0284c7;
+      --accent-gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+      --accent-gradient-emerald: linear-gradient(135deg, #059669 0%, #0284c7 100%);
+      --accent-gradient-amber: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+
+      --accent-tag-bg: rgba(2, 132, 199, 0.08);
+      --accent-tag-text: #0369a1;
+      --accent-tag-border: rgba(2, 132, 199, 0.2);
+
+      --badge-green-bg: rgba(22, 163, 74, 0.1);
+      --badge-green-text: #15803d;
+      --badge-green-border: rgba(22, 163, 74, 0.2);
+
+      --card-shadow: 0 10px 28px -8px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--border-color);
+      --card-shadow-hover: 0 18px 36px -8px rgba(2, 132, 199, 0.15), 0 0 0 1px var(--border-accent);
+    }
+
+    /* =====================================================================
+       BASE STYLES, BOX-SIZING & UNIVERSAL OVERFLOW-X PREVENTION
+       ===================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
+      box-sizing: border-box;
+      position: relative;
+      padding: 2.5rem 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Universal responsive imagery & SVGs */
+    img, svg, video, canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Universal text overflow wrap protection */
+    p, span, a, h1, h2, h3, h4, h5, h6, li, div {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    /* Ambient background glow */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1200px;
+      height: 480px;
+      background: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.09), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .resume-wrapper {
+      width: 100%;
+      max-width: 1060px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    /* Keyframe animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =====================================================================
+       TOP ACTION BAR & RESPONSIVE NAVIGATION
+       ===================================================================== */
+    .top-action-bar {
+      position: sticky;
+      top: 1rem;
+      z-index: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 0.85rem 1.4rem;
+      background-color: var(--bg-nav-glass);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border-color);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      gap: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: var(--transition-base);
+    }
+
+    .top-action-bar.scrolled {
+      box-shadow: 0 14px 36px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px var(--border-accent);
+      border-color: var(--border-accent);
+    }
+
+    [data-theme="light"] .top-action-bar {
+      box-shadow: 0 8px 24px -8px rgba(15, 23, 42, 0.1), 0 0 0 1px var(--border-color);
+    }
+
+    [data-theme="light"] .top-action-bar.scrolled {
+      box-shadow: 0 12px 30px -8px rgba(2, 132, 199, 0.2), 0 0 0 1px var(--border-accent);
+    }
+
+    .top-bar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.95rem;
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      color: var(--badge-green-text);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .status-text-full {
+      display: inline;
+    }
+
+    .status-text-short {
+      display: none;
+    }
+
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: var(--badge-green-text);
+      border-radius: 50%;
+      animation: pulse-ring 1.8s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+      70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition-base);
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-btn:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-accent);
+      color: var(--text-highlight);
+    }
+
+    .action-buttons-drawer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .mobile-nav-links {
+      display: none;
+    }
+
+    .action-buttons-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.15rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition-base);
+      border: 1px solid transparent;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .btn svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 22px rgba(2, 132, 199, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* =====================================================================
+       MAIN RESUME CONTAINER
+       ===================================================================== */
+    .resume-sheet {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.25rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .resume-sheet::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+
+    /* =====================================================================
+       HEADER SECTION
+       ===================================================================== */
+    .header-section {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2.25rem;
+    }
+
+    .candidate-name {
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.35rem;
+    }
+
+    .candidate-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-bottom: 0.9rem;
+      letter-spacing: 0.01em;
+    }
+
+    .candidate-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s ease;
+    }
+
+    .meta-item:hover {
+      color: var(--text-highlight);
+    }
+
+    .meta-item svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2;
+      color: var(--text-highlight);
+      flex-shrink: 0;
+    }
+
+    .candidate-avatar {
+      width: 105px;
+      height: 105px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(129, 140, 248, 0.16));
+      border: 2px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--text-highlight);
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.18);
+      position: relative;
+    }
+
+    /* =====================================================================
+       SECTION HEADINGS & LAYOUT
+       ===================================================================== */
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .section-title-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-md);
+      background: var(--accent-tag-bg);
+      color: var(--text-highlight);
+      border: 1px solid var(--accent-tag-border);
+      flex-shrink: 0;
+    }
+
+    .section-title-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .resume-section {
+      margin-bottom: var(--section-spacing);
+      width: 100%;
+      box-sizing: border-box;
+      scroll-margin-top: 5.5rem;
+    }
+
+    /* =====================================================================
+       PROFESSIONAL SUMMARY
+       ===================================================================== */
+    .summary-text {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.78;
+      text-align: justify;
+      background-color: var(--bg-surface-elevated);
+      padding: 1.4rem 1.75rem;
+      border-radius: var(--radius-md);
+      border-left: 3.5px solid var(--text-highlight);
+    }
+
+    .summary-text strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* =====================================================================
+       TECHNICAL SKILLS GRID
+       ===================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      transition: var(--transition-base);
+    }
+
+    .skill-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .skill-card-header {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-highlight);
+      margin-bottom: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skill-tag {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.28rem 0.65rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-base);
+    }
+
+    .skill-tag.highlight {
+      background: var(--accent-tag-bg);
+      color: var(--accent-tag-text);
+      border-color: var(--accent-tag-border);
+      font-weight: 600;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--text-highlight);
+    }
+
+    /* =====================================================================
+       TECHNICAL SKILLS GRID & ITEMS
+       ===================================================================== */
+    .tech-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .tech-skill-item {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      transition: var(--transition-base);
+    }
+
+    .tech-skill-item:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .tech-skill-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: var(--accent-tag-bg);
+      border: 1px solid var(--accent-tag-border);
+      color: var(--text-highlight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+    }
+
+    .tech-skill-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .tech-skill-name {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .tech-skill-level {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 0.2rem;
+      line-height: 1.35;
+    }
+
+    /* =====================================================================
+       COURSE COMPLETION SECTION
+       ===================================================================== */
+    .course-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--text-highlight);
+      border-radius: var(--radius-md);
+      padding: 1.6rem 1.85rem;
+      transition: var(--transition-base);
+    }
+
+    .course-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .course-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .course-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .course-subtitle {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-top: 0.2rem;
+    }
+
+    .course-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      color: var(--badge-green-text);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .course-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.15rem;
+    }
+
+    .course-curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .curriculum-item {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .curriculum-item strong {
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+
+    /* =====================================================================
+       PROFESSIONAL EXPERIENCE (8 MONTHS) STYLING
+       ===================================================================== */
+    .experience-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--text-highlight);
+      border-radius: var(--radius-md);
+      padding: 1.65rem 1.85rem;
+      transition: var(--transition-base);
+      margin-bottom: 1.75rem;
+    }
+
+    .experience-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.85rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .experience-role {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .experience-company {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-top: 0.25rem;
+    }
+
+    .experience-duration-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.38rem 0.95rem;
+      background: var(--accent-tag-bg);
+      border: 1px solid var(--accent-tag-border);
+      color: var(--text-highlight);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .experience-tenure-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      color: var(--badge-green-text);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .experience-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+      margin-bottom: 0.95rem;
+    }
+
+    .experience-projects-callout {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.9rem 1.2rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--accent-tag-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-top: 1rem;
+    }
+
+    .experience-projects-callout strong {
+      color: var(--text-highlight);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .experience-projects-callout span {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .callout-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-tag-bg);
+      border: 1px solid var(--accent-tag-border);
+      color: var(--text-highlight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* =====================================================================
+       PROJECT FILTER CONTROLS
+       ===================================================================== */
+    .project-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .filter-chip {
+      padding: 0.42rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .filter-chip:hover {
+      color: var(--text-main);
+      border-color: var(--border-accent);
+    }
+
+    .filter-chip.active {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 2px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    /* =====================================================================
+       FEATURED PROJECTS CARDS
+       ===================================================================== */
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .project-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.65rem;
+      transition: var(--transition-base);
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-card.flagship {
+      border-left: 4px solid var(--text-highlight);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.65rem;
+      gap: 1rem;
+    }
+
+    .project-title-area {
+      flex: 1;
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .project-badge-recent {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.22rem 0.6rem;
+      background: var(--accent-gradient-emerald);
+      color: #ffffff;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+    }
+
+    .project-badge-newest {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.22rem 0.6rem;
+      background: var(--accent-gradient-amber);
+      color: #ffffff;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+    }
+
+    .project-category {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-top: 0.2rem;
+    }
+
+    .project-date {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+      background: var(--bg-surface);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .project-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 1.05rem;
+      line-height: 1.68;
+    }
+
+    .project-bullets {
+      list-style-type: none;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-bullets li {
+      position: relative;
+      padding-left: 1.45rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.89rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .project-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--text-highlight);
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    .project-bullets li strong {
+      color: var(--text-main);
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.2rem 0.55rem;
+      background-color: var(--bg-surface);
+      color: var(--text-highlight);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-sm);
+    }
+
+    /* =====================================================================
+       ADDITIONAL NOTABLE PROJECTS GRID
+       ===================================================================== */
+    .mini-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .mini-project-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      transition: var(--transition-base);
+    }
+
+    .mini-project-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .mini-project-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .mini-project-date {
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+      margin-bottom: 0.65rem;
+    }
+
+    .mini-project-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 0.85rem;
+    }
+
+    /* =====================================================================
+       TIMELINES (EXPERIENCE & BACKGROUND)
+       ===================================================================== */
+    .timeline {
+      position: relative;
+      padding-left: 1.85rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -1.85rem;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--bg-surface);
+      border: 2px solid var(--text-highlight);
+      box-shadow: 0 0 0 3px var(--bg-surface);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+      gap: 0.5rem;
+    }
+
+    .timeline-role {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .timeline-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+
+    .timeline-content {
+      font-size: 0.91rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* =====================================================================
+       PAPER PRESENTATION STYLING
+       ===================================================================== */
+    .paper-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid #818cf8;
+      border-radius: var(--radius-md);
+      padding: 1.55rem 1.85rem;
+      transition: var(--transition-base);
+    }
+
+    .paper-card:hover {
+      border-color: rgba(129, 140, 248, 0.4);
+      box-shadow: 0 16px 36px -10px rgba(129, 140, 248, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .paper-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .paper-title {
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    .paper-subtitle {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #818cf8;
+      margin-top: 0.25rem;
+    }
+
+    [data-theme="light"] .paper-subtitle {
+      color: #4f46e5;
+    }
+
+    .paper-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.28);
+      color: #a5b4fc;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    [data-theme="light"] .paper-badge {
+      background: rgba(79, 70, 229, 0.08);
+      border-color: rgba(79, 70, 229, 0.25);
+      color: #4338ca;
+    }
+
+    .paper-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+      margin-bottom: 0.95rem;
+    }
+
+    .paper-bullets {
+      list-style-type: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-bullets li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.89rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .paper-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #818cf8;
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    [data-theme="light"] .paper-bullets li::before {
+      color: #4f46e5;
+    }
+
+    .paper-bullets li strong {
+      color: var(--text-main);
+    }
+
+    /* =====================================================================
+       EDUCATION GRID & CARDS
+       ===================================================================== */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .education-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.45rem;
+      transition: var(--transition-base);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .education-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .edu-degree {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+      line-height: 1.35;
+    }
+
+    .edu-institution {
+      font-size: 0.88rem;
+      color: var(--text-highlight);
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 0.85rem;
+    }
+
+    .edu-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .edu-years {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .edu-score-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.22rem 0.65rem;
+      background: var(--accent-tag-bg);
+      border: 1px solid var(--accent-tag-border);
+      color: var(--text-highlight);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .info-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.45rem;
+      height: 100%;
+    }
+
+    .info-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+    }
+
+    .info-card .subtitle {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-bottom: 0.65rem;
+    }
+
+    .info-card .details {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* =====================================================================
+       FOOTER & TOAST NOTIFICATION
+       ===================================================================== */
+    .resume-footer {
+      margin-top: 3.25rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-accent);
+      color: var(--text-main);
+      padding: 0.85rem 1.35rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+    }
+
+    .toast-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* =====================================================================
+       PRINT STYLESHEET (@media print)
+       ===================================================================== */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #111827 !important;
+        padding: 0 !important;
+        font-size: 9.2pt !important;
+        line-height: 1.42 !important;
+      }
+
+      .ambient-glow,
+      .top-action-bar,
+      .project-filter-bar,
+      .toast-notification,
+      .badge-status,
+      .mini-projects-grid {
+        display: none !important;
+      }
+
+      .resume-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+
+      .resume-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0.4in 0.45in !important;
+        background: #ffffff !important;
+      }
+
+      .resume-sheet::before {
+        display: none !important;
+      }
+
+      .candidate-name {
+        background: none !important;
+        -webkit-text-fill-color: #111827 !important;
+        color: #111827 !important;
+        font-size: 20pt !important;
+      }
+
+      .candidate-title {
+        color: #0284c7 !important;
+        font-size: 11pt !important;
+      }
+
+      .candidate-meta {
+        color: #4b5563 !important;
+        font-size: 8.5pt !important;
+      }
+
+      .candidate-meta a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      .candidate-avatar {
+        display: none !important;
+      }
+
+      .header-section {
+        grid-template-columns: 1fr !important;
+        padding-bottom: 10pt !important;
+        margin-bottom: 12pt !important;
+        border-bottom: 1.5pt solid #e5e7eb !important;
+      }
+
+      .section-title {
+        font-size: 11.5pt !important;
+        margin-bottom: 7pt !important;
+        color: #111827 !important;
+        border-bottom: 1pt solid #e5e7eb !important;
+        padding-bottom: 3pt !important;
+      }
+
+      .section-title-icon {
+        display: none !important;
+      }
+
+      .summary-text {
+        background: #f9fafb !important;
+        color: #374151 !important;
+        padding: 8pt 10pt !important;
+        font-size: 8.8pt !important;
+        border-left: 2.5pt solid #0284c7 !important;
+      }
+
+      .skill-card,
+      .project-card,
+      .education-card,
+      .tech-skill-item,
+      .course-card,
+      .curriculum-item,
+      .experience-card,
+      .paper-card,
+      .info-card {
+        background: #ffffff !important;
+        border: 1pt solid #e5e7eb !important;
+        box-shadow: none !important;
+        padding: 7pt 9pt !important;
+        page-break-inside: avoid;
+        transform: none !important;
+      }
+
+      .tech-skill-name,
+      .course-title,
+      .experience-role,
+      .paper-title {
+        color: #111827 !important;
+        font-size: 10pt !important;
+      }
+
+      .tech-skill-level,
+      .course-desc,
+      .curriculum-item {
+        color: #374151 !important;
+        font-size: 8.5pt !important;
+      }
+
+      .course-badge {
+        background: #f0fdf4 !important;
+        color: #15803d !important;
+        border: 0.5pt solid #bbf7d0 !important;
+        font-size: 7.5pt !important;
+      }
+
+      .edu-degree {
+        font-size: 9.8pt !important;
+        color: #111827 !important;
+      }
+
+      .edu-institution {
+        font-size: 8.5pt !important;
+        color: #0284c7 !important;
+      }
+
+      .edu-years {
+        font-size: 7.8pt !important;
+        color: #4b5563 !important;
+      }
+
+      .edu-score-badge {
+        background: #e0f2fe !important;
+        color: #0369a1 !important;
+        border: 0.5pt solid #bae6fd !important;
+        font-size: 7.5pt !important;
+        padding: 1pt 3.5pt !important;
+      }
+
+      .skill-tag {
+        background: #f3f4f6 !important;
+        color: #1f2937 !important;
+        border: 0.5pt solid #d1d5db !important;
+        font-size: 7.8pt !important;
+        padding: 1pt 3.5pt !important;
+      }
+
+      .skill-tag.highlight {
+        background: #e0f2fe !important;
+        color: #0369a1 !important;
+      }
+
+      .project-badge-recent,
+      .project-badge-newest {
+        background: #0284c7 !important;
+        color: #ffffff !important;
+        font-size: 7pt !important;
+        padding: 1pt 3.5pt !important;
+      }
+
+      .project-title {
+        font-size: 10.5pt !important;
+        color: #111827 !important;
+      }
+
+      .project-category {
+        color: #0284c7 !important;
+        font-size: 8.5pt !important;
+      }
+
+      .project-date {
+        background: #f3f4f6 !important;
+        color: #4b5563 !important;
+        font-size: 8pt !important;
+        border: none !important;
+      }
+
+      .project-desc,
+      .project-bullets li {
+        color: #374151 !important;
+        font-size: 8.5pt !important;
+      }
+
+      .project-bullets li::before {
+        color: #0284c7 !important;
+      }
+
+      .tech-pill {
+        background: #f9fafb !important;
+        color: #0369a1 !important;
+        border: 0.5pt solid #bae6fd !important;
+        font-size: 7.2pt !important;
+        padding: 1pt 3.5pt !important;
+      }
+
+      .timeline-dot {
+        background: #ffffff !important;
+        border-color: #0284c7 !important;
+      }
+
+      .timeline::before {
+        background: #d1d5db !important;
+      }
+
+      .resume-footer {
+        display: none !important;
+      }
+
+      .resume-section {
+        margin-bottom: 12pt !important;
+        page-break-inside: auto;
+      }
+    }
+
+    /* =====================================================================
+       RTL (RIGHT-TO-LEFT) SUPPORT & ALIGNMENT
+       ===================================================================== */
+    [dir="rtl"] body {
+      direction: rtl;
+      text-align: right;
+    }
+
+    [dir="rtl"] .top-bar-header,
+    [dir="rtl"] .course-header,
+    [dir="rtl"] .experience-header,
+    [dir="rtl"] .paper-header,
+    [dir="rtl"] .experience-projects-callout,
+    [dir="rtl"] .project-header,
+    [dir="rtl"] .timeline-header,
+    [dir="rtl"] .edu-meta,
+    [dir="rtl"] .resume-footer {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .candidate-meta,
+    [dir="rtl"] .tech-skills-grid,
+    [dir="rtl"] .project-filter-bar,
+    [dir="rtl"] .project-tech-stack {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .btn,
+    [dir="rtl"] .badge-status,
+    [dir="rtl"] .section-title,
+    [dir="rtl"] .tech-skill-item {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    [dir="rtl"] .summary-text {
+      border-left: none;
+      border-right: 3.5px solid var(--text-highlight);
+      text-align: right;
+    }
+
+    [dir="rtl"] .course-card {
+      border-left: 1px solid var(--border-color);
+      border-right: 4px solid var(--text-highlight);
+    }
+
+    [dir="rtl"] .experience-card {
+      border-left: 1px solid var(--border-color);
+      border-right: 4px solid var(--text-highlight);
+    }
+
+    [dir="rtl"] .paper-card {
+      border-left: 1px solid var(--border-color);
+      border-right: 4px solid #818cf8;
+    }
+
+    [dir="rtl"] .project-card.flagship {
+      border-left: 1px solid var(--border-color);
+      border-right: 4px solid var(--text-highlight);
+    }
+
+    [dir="rtl"] .timeline {
+      padding-left: 0;
+      padding-right: 1.85rem;
+    }
+
+    [dir="rtl"] .timeline::before {
+      left: auto;
+      right: 6px;
+    }
+
+    [dir="rtl"] .timeline-dot {
+      left: auto;
+      right: -1.85rem;
+    }
+
+    [dir="rtl"] .project-bullets li {
+      padding-left: 0;
+      padding-right: 1.45rem;
+    }
+
+    [dir="rtl"] .project-bullets li::before {
+      left: auto;
+      right: 0;
+    }
+
+    /* =====================================================================
+       RESPONSIVE DESIGN BREAKPOINT 1: DESKTOP / LARGE TABLET (<= 1024px)
+       ===================================================================== */
+    @media (max-width: 1024px) {
+      :root {
+        --section-spacing: 2.25rem;
+      }
+
+      body {
+        padding: 2rem 1rem;
+      }
+
+      .resume-wrapper {
+        width: 96%;
+        max-width: 100%;
+      }
+
+      .resume-sheet {
+        padding: 2.5rem 2rem;
+      }
+
+      .candidate-name {
+        font-size: 2.45rem;
+      }
+
+      .candidate-title {
+        font-size: 1.12rem;
+      }
+
+      .candidate-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 2.3rem;
+        border-radius: 20px;
+      }
+
+      .tech-skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 0.85rem;
+      }
+
+      .course-curriculum-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .mini-projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE DESIGN BREAKPOINT 2: TABLETS & PHABLETS (<= 768px)
+       - COLLAPSIBLE MOBILE MENU ACTIVATED
+       - STACKING CARDS & SINGLE COLUMN LAYOUTS
+       ===================================================================== */
+    @media (max-width: 768px) {
+      :root {
+        --section-spacing: 1.85rem;
+      }
+
+      body {
+        padding: 1.25rem 0.65rem;
+      }
+
+      .resume-wrapper {
+        width: 100%;
+      }
+
+      .resume-sheet {
+        padding: 1.75rem 1.25rem;
+        border-radius: var(--radius-md);
+      }
+
+      /* Sticky Navbar with mobile menu drawer */
+      .top-action-bar {
+        position: sticky;
+        top: 0.5rem;
+        z-index: 500;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem 1.15rem;
+        gap: 0;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius-md);
+        max-height: calc(100vh - 1rem);
+        overflow-y: auto;
+      }
+
+      .resume-section {
+        scroll-margin-top: 4.5rem;
+      }
+
+      .top-bar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .action-buttons-drawer {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+        padding-top: 0.85rem;
+        margin-top: 0.75rem;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .action-buttons-drawer.is-open {
+        display: flex;
+        animation: slideDownNav 0.22s ease-out forwards;
+      }
+
+      @keyframes slideDownNav {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-nav-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.45rem;
+        width: 100%;
+      }
+
+      .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0.5rem 0.45rem;
+        background-color: var(--bg-surface-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-base);
+      }
+
+      .mobile-nav-link:hover,
+      .mobile-nav-link:active {
+        color: var(--text-highlight);
+        border-color: var(--border-accent);
+        background-color: var(--bg-surface-hover);
+      }
+
+      .action-buttons-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        width: 100%;
+      }
+
+      .action-buttons-group .btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.88rem;
+        padding: 0.65rem 1rem;
+      }
+
+      /* Candidate Header */
+      .header-section {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 1.25rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .candidate-name {
+        font-size: 2.1rem;
+      }
+
+      .candidate-title {
+        font-size: 1.05rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .candidate-avatar {
+        display: none;
+      }
+
+      .candidate-meta {
+        gap: 0.85rem;
+        font-size: 0.88rem;
+      }
+
+      /* Professional Summary text aligns cleanly */
+      .summary-text {
+        text-align: left;
+        padding: 1.2rem 1.35rem;
+      }
+
+      /* Technical Skills Grid */
+      .tech-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+      }
+
+      /* Course Completion */
+      .course-card {
+        padding: 1.35rem 1.25rem;
+      }
+
+      .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .course-curriculum-grid {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+      }
+
+      /* Experience (8 Months) & Paper Presentation */
+      .experience-card,
+      .paper-card {
+        padding: 1.35rem 1.2rem;
+      }
+
+      .experience-header,
+      .paper-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+      }
+
+      /* Project Cards */
+      .project-card {
+        padding: 1.35rem 1.2rem;
+      }
+
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+      }
+
+      .project-date {
+        align-self: flex-start;
+      }
+
+      .project-title {
+        font-size: 1.18rem;
+      }
+
+      /* Education Grid */
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+      }
+
+      /* Mini Projects Grid */
+      .mini-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+
+      /* Timeline */
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .timeline-dot {
+        left: -1.5rem;
+      }
+
+      .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE DESIGN BREAKPOINT 3: MOBILE PHONES (<= 480px)
+       - SINGLE COLUMN GRIDS
+       - SHORT STATUS TEXT
+       - TOUCH-OPTIMIZED HIT TARGETS
+       ===================================================================== */
+    @media (max-width: 480px) {
+      :root {
+        --section-spacing: 1.5rem;
+      }
+
+      body {
+        padding: 0.75rem 0.35rem;
+      }
+
+      .resume-sheet {
+        padding: 1.25rem 0.85rem;
+        border-radius: 12px;
+      }
+
+      .resume-sheet::before {
+        height: 3px;
+      }
+
+      /* Sticky Mobile Action Bar */
+      .top-action-bar {
+        top: 0.35rem;
+        padding: 0.65rem 0.85rem;
+        margin-bottom: 1.2rem;
+        max-height: calc(100vh - 0.7rem);
+      }
+
+      .resume-section {
+        scroll-margin-top: 4rem;
+      }
+
+      .status-text-full {
+        display: none;
+      }
+
+      .status-text-short {
+        display: inline;
+      }
+
+      .badge-status {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.76rem;
+      }
+
+      .mobile-menu-btn {
+        width: 36px;
+        height: 36px;
+      }
+
+      .mobile-nav-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.35rem;
+      }
+
+      .mobile-nav-link {
+        font-size: 0.76rem;
+        padding: 0.42rem 0.4rem;
+      }
+
+      .action-buttons-group .btn {
+        padding: 0.55rem 0.85rem;
+        font-size: 0.82rem;
+      }
+
+      /* Header Section */
+      .candidate-name {
+        font-size: 1.75rem;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .candidate-title {
+        font-size: 0.94rem;
+        margin-bottom: 0.65rem;
+      }
+
+      .candidate-meta {
+        flex-direction: column;
+        gap: 0.45rem;
+        align-items: flex-start;
+      }
+
+      .meta-item {
+        font-size: 0.82rem;
+        word-break: break-all;
+        overflow-wrap: anywhere;
+        width: 100%;
+      }
+
+      /* Section Title */
+      .section-title {
+        font-size: 1.15rem;
+        gap: 0.55rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .section-title-icon svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      /* Summary */
+      .summary-text {
+        padding: 0.95rem 1rem;
+        font-size: 0.88rem;
+        line-height: 1.62;
+      }
+
+      /* All Grids Collapse to 1 Column */
+      .tech-skills-grid {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+      }
+
+      .tech-skill-item {
+        padding: 0.8rem 0.9rem;
+        gap: 0.75rem;
+      }
+
+      .tech-skill-icon-box {
+        width: 36px;
+        height: 36px;
+        font-size: 0.75rem;
+      }
+
+      .tech-skill-name {
+        font-size: 0.95rem;
+      }
+
+      .tech-skill-level {
+        font-size: 0.74rem;
+      }
+
+      /* Course */
+      .course-card {
+        padding: 1.15rem 0.95rem;
+      }
+
+      .course-title {
+        font-size: 1.12rem;
+      }
+
+      .course-subtitle {
+        font-size: 0.82rem;
+      }
+
+      .course-badge {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.6rem;
+      }
+
+      .course-desc {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 0.85rem;
+      }
+
+      .curriculum-item {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      /* Experience (8 Months) */
+      .experience-card {
+        padding: 1.15rem 0.95rem;
+      }
+
+      .experience-role {
+        font-size: 1.12rem;
+      }
+
+      .experience-company {
+        font-size: 0.85rem;
+      }
+
+      .experience-duration-pill {
+        font-size: 0.76rem;
+        padding: 0.3rem 0.75rem;
+      }
+
+      .experience-projects-callout {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.82rem;
+        gap: 0.65rem;
+      }
+
+      /* Paper Presentation */
+      .paper-card {
+        padding: 1.15rem 0.95rem;
+      }
+
+      .paper-title {
+        font-size: 1.05rem;
+      }
+
+      .paper-subtitle {
+        font-size: 0.82rem;
+      }
+
+      .paper-badge {
+        font-size: 0.7rem;
+        padding: 0.22rem 0.55rem;
+      }
+
+      .paper-bullets li {
+        padding-left: 1.2rem;
+        font-size: 0.84rem;
+      }
+
+      /* Filter Chips */
+      .project-filter-bar {
+        gap: 0.4rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .filter-chip {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.76rem;
+      }
+
+      /* Project Cards */
+      .project-card {
+        padding: 1.15rem 0.9rem;
+      }
+
+      .project-title {
+        font-size: 1.1rem;
+        gap: 0.45rem;
+      }
+
+      .project-badge-recent,
+      .project-badge-newest {
+        font-size: 0.66rem;
+        padding: 0.18rem 0.5rem;
+      }
+
+      .project-category {
+        font-size: 0.8rem;
+      }
+
+      .project-date {
+        font-size: 0.75rem;
+        padding: 0.22rem 0.55rem;
+      }
+
+      .project-desc {
+        font-size: 0.86rem;
+        line-height: 1.6;
+        margin-bottom: 0.85rem;
+      }
+
+      .project-bullets li {
+        padding-left: 1.25rem;
+        font-size: 0.84rem;
+        line-height: 1.55;
+        margin-bottom: 0.45rem;
+      }
+
+      .project-bullets li::before {
+        font-size: 0.95rem;
+      }
+
+      .project-tech-stack {
+        gap: 0.35rem;
+      }
+
+      .tech-pill {
+        font-size: 0.7rem;
+        padding: 0.18rem 0.45rem;
+      }
+
+      /* Additional Mini Projects */
+      .mini-project-card {
+        padding: 1.05rem 0.9rem;
+      }
+
+      .mini-project-title {
+        font-size: 0.98rem;
+      }
+
+      .mini-project-date {
+        font-size: 0.74rem;
+      }
+
+      .mini-project-desc {
+        font-size: 0.82rem;
+      }
+
+      /* Education Grid */
+      .education-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .education-card {
+        padding: 1rem 0.95rem;
+      }
+
+      .edu-degree {
+        font-size: 0.98rem;
+      }
+
+      .edu-institution {
+        font-size: 0.82rem;
+        margin-bottom: 0.65rem;
+      }
+
+      .edu-years {
+        font-size: 0.76rem;
+      }
+
+      .edu-score-badge {
+        font-size: 0.72rem;
+        padding: 0.18rem 0.5rem;
+      }
+
+      /* Highlights */
+      .info-card {
+        padding: 1.15rem 0.95rem;
+      }
+
+      .info-card h4 {
+        font-size: 0.98rem;
+      }
+
+      .info-card .details {
+        font-size: 0.84rem;
+      }
+
+      /* Footer */
+      .resume-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-size: 0.78rem;
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+      }
+
+      /* Toast Notification */
+      .toast-notification {
+        bottom: 1rem;
+        right: 0.75rem;
+        left: 0.75rem;
+        justify-content: center;
+        font-size: 0.82rem;
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE DESIGN BREAKPOINT 4: ULTRA-SMALL SCREENS (<= 320px)
+       - EXTREME HORIZONTAL INTEGRITY
+       - NO HORIZONTAL SCROLL OR CUTOFFS
+       ===================================================================== */
+    @media (max-width: 320px) {
+      :root {
+        --section-spacing: 1.25rem;
+      }
+
+      body {
+        padding: 0.4rem 0.2rem;
+      }
+
+      .resume-sheet {
+        padding: 0.85rem 0.55rem;
+        border-radius: 8px;
+      }
+
+      .top-action-bar {
+        top: 0.2rem;
+        padding: 0.55rem 0.65rem;
+        max-height: calc(100vh - 0.4rem);
+      }
+
+      .resume-section {
+        scroll-margin-top: 3.5rem;
+      }
+
+      .badge-status {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.45rem;
+      }
+
+      .status-pulse {
+        width: 6px;
+        height: 6px;
+      }
+
+      .mobile-menu-btn {
+        width: 34px;
+        height: 34px;
+      }
+
+      .mobile-nav-link {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.35rem;
+      }
+
+      .action-buttons-group .btn {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.76rem;
+      }
+
+      .candidate-name {
+        font-size: 1.45rem;
+      }
+
+      .candidate-title {
+        font-size: 0.85rem;
+      }
+
+      .candidate-meta {
+        font-size: 0.76rem;
+        gap: 0.35rem;
+      }
+
+      .meta-item {
+        font-size: 0.76rem;
+      }
+
+      .meta-item svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .section-title {
+        font-size: 1.05rem;
+        gap: 0.45rem;
+        margin-bottom: 0.85rem;
+      }
+
+      .section-title-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .section-title-icon svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .summary-text {
+        padding: 0.75rem 0.75rem;
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .tech-skill-item {
+        padding: 0.7rem 0.7rem;
+        gap: 0.6rem;
+      }
+
+      .tech-skill-icon-box {
+        width: 32px;
+        height: 32px;
+        font-size: 0.7rem;
+      }
+
+      .tech-skill-name {
+        font-size: 0.88rem;
+      }
+
+      .tech-skill-level {
+        font-size: 0.7rem;
+      }
+
+      .course-card {
+        padding: 0.95rem 0.75rem;
+      }
+
+      .course-title {
+        font-size: 1.02rem;
+      }
+
+      .curriculum-item {
+        padding: 0.6rem 0.65rem;
+        font-size: 0.75rem;
+      }
+
+      /* Experience (8 Months) */
+      .experience-card {
+        padding: 0.95rem 0.75rem;
+      }
+
+      .experience-role {
+        font-size: 1.02rem;
+      }
+
+      .experience-company {
+        font-size: 0.8rem;
+      }
+
+      .experience-duration-pill {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.55rem;
+      }
+
+      .experience-projects-callout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+        padding: 0.65rem 0.75rem;
+      }
+
+      /* Paper Presentation */
+      .paper-card {
+        padding: 0.95rem 0.75rem;
+      }
+
+      .paper-title {
+        font-size: 0.96rem;
+      }
+
+      .paper-subtitle {
+        font-size: 0.78rem;
+      }
+
+      .paper-bullets li {
+        padding-left: 1.1rem;
+        font-size: 0.78rem;
+      }
+
+      .project-card {
+        padding: 0.95rem 0.65rem;
+      }
+
+      .project-title {
+        font-size: 1.02rem;
+      }
+
+      .project-category {
+        font-size: 0.74rem;
+      }
+
+      .project-date {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.45rem;
+      }
+
+      .project-bullets li {
+        padding-left: 1.15rem;
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
+
+      .project-bullets li::before {
+        font-size: 0.85rem;
+      }
+
+      .tech-pill {
+        font-size: 0.66rem;
+        padding: 0.15rem 0.38rem;
+      }
+
+      .mini-project-card {
+        padding: 0.85rem 0.65rem;
+      }
+
+      .mini-project-title {
+        font-size: 0.9rem;
+      }
+
+      .education-card {
+        padding: 0.85rem 0.65rem;
+      }
+
+      .edu-degree {
+        font-size: 0.9rem;
+      }
+
+      .edu-institution {
+        font-size: 0.78rem;
+      }
+
+      .edu-score-badge {
+        font-size: 0.68rem;
+        padding: 0.15rem 0.42rem;
+      }
+
+      .info-card {
+        padding: 0.95rem 0.65rem;
+      }
+
+      .info-card h4 {
+        font-size: 0.92rem;
+      }
+
+      .resume-footer {
+        font-size: 0.72rem;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient visual lighting backdrop -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="resume-wrapper">
+
+    <!-- FLOATING TOP BAR WITH CONTROLS & RESPONSIVE MOBILE MENU -->
+    <header class="top-action-bar" id="topNavbar">
+      <div class="top-bar-header">
+        <div class="badge-status">
+          <span class="status-pulse" aria-hidden="true"></span>
+          <span class="status-text-full">Open to Opportunities & Freelance Projects</span>
+          <span class="status-text-short">Open to Work</span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button (Visible on screens <= 768px) -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="actionButtonsMenu">
+          <span class="hamburger-icon" id="menuIconBars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </span>
+          <span class="close-icon" id="menuIconClose" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Action Buttons & Quick Nav (Collapses on Mobile) -->
+      <div class="action-buttons-drawer" id="actionButtonsMenu">
+        <!-- Quick Section Anchor Links for Mobile Nav -->
+        <nav class="mobile-nav-links" aria-label="Resume Sections Navigation">
+          <a href="#summarySection" class="mobile-nav-link">Summary</a>
+          <a href="#skillsSection" class="mobile-nav-link">Skills</a>
+          <a href="#courseSection" class="mobile-nav-link">Course</a>
+          <a href="#experienceSection" class="mobile-nav-link">Experience (8 Mo)</a>
+          <a href="#pythonProjectsSection" class="mobile-nav-link">Python Projects</a>
+          <a href="#webProjectsSection" class="mobile-nav-link">Web Apps</a>
+          <a href="#paperPresentationSection" class="mobile-nav-link">Paper Pres.</a>
+          <a href="#educationSection" class="mobile-nav-link">Education</a>
+        </nav>
+
+        <div class="action-buttons-group">
+          <button class="btn btn-secondary" id="themeToggleBtn" aria-label="Toggle Theme">
+            <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span id="themeBtnText">Light Mode</span>
+          </button>
+
+          <button class="btn btn-secondary" id="copyEmailBtn" aria-label="Copy Email Address">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy Email</span>
+          </button>
+
+          <button class="btn btn-primary" id="printResumeBtn" onclick="window.print()" aria-label="Print or Save Resume as PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print / PDF</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN RESUME DOCUMENT -->
+    <main class="resume-sheet">
+
+      <!-- HEADER SECTION -->
+      <section class="header-section">
+        <div>
+          <h1 class="candidate-name">Tamilselvan</h1>
+          <div class="candidate-title">Full-Stack Web Developer & Python / Django Engineer</div>
+          
+          <div class="candidate-meta">
+            <a href="mailto:tamilselvan3738@gmail.com" class="meta-item" id="emailLink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>tamilselvan3738@gmail.com</span>
+            </a>
+
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Dharmapuri, Tamil Nadu, India</span>
+            </span>
+
+            <a href="https://github.com" target="_blank" rel="noopener" class="meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="meta-item" aria-label="Vercel Projects">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px;"><path d="M12 1L24 22H0L12 1Z" /></svg>
+              <span>Vercel</span>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="candidate-avatar" aria-hidden="true">
+          <span>T</span>
+        </div>
+      </section>
+
+      <!-- PROFESSIONAL SUMMARY -->
+      <section class="resume-section" id="summarySection">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </span>
+          Professional Summary
+        </h2>
+        <p class="summary-text">
+          High-impact <strong>Full-Stack Developer</strong> and <strong>Python / Django Software Engineer</strong> with <strong>8 months of professional experience</strong> designing, building, and deploying responsive digital products, automated cybersecurity solutions, and computer-vision-powered platforms. Proven ability to architect end-to-end applications: from crafting high-conversion modern UIs (Tailwind CSS, modern JavaScript, basic knowledge in React.js, 3D responsive layouts, and dual admin/user dashboards) to engineering resilient backends with Python, Django REST Framework, OpenCV facial biometric matching, and Windows OS endpoint defense automation. Dedicated to clean architecture, robust security, and exceptional performance across all form factors.
+        </p>
+      </section>
+
+      <!-- TECHNICAL SKILLS SECTION -->
+      <section class="resume-section" id="skillsSection">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </span>
+          Technical Skills
+        </h2>
+
+        <div class="tech-skills-grid">
+          <!-- HTML -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">HTML</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">HTML</div>
+              <div class="tech-skill-level">Semantic Markup & Structure</div>
+            </div>
+          </div>
+
+          <!-- CSS -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">CSS</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">CSS</div>
+              <div class="tech-skill-level">Styling, Flexbox & Grid</div>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">JS</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">JavaScript</div>
+              <div class="tech-skill-level">Modern ES6+ & DOM</div>
+            </div>
+          </div>
+
+          <!-- React -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">⚛</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">React</div>
+              <div class="tech-skill-level">Basic Knowledge & Components</div>
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">Py</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">Python</div>
+              <div class="tech-skill-level">Backend & Core Programming</div>
+            </div>
+          </div>
+
+          <!-- Django -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">Dj</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">Django</div>
+              <div class="tech-skill-level">Web Framework & REST APIs</div>
+            </div>
+          </div>
+
+          <!-- SQL -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">SQL</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">SQL</div>
+              <div class="tech-skill-level">Database Queries & Modeling</div>
+            </div>
+          </div>
+
+          <!-- Bootstrap -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">BS</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">Bootstrap</div>
+              <div class="tech-skill-level">Responsive UI Framework</div>
+            </div>
+          </div>
+
+          <!-- WordPress -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">WP</div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">WordPress</div>
+              <div class="tech-skill-level">CMS & Web Management</div>
+            </div>
+          </div>
+
+          <!-- GitHub -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">GitHub</div>
+              <div class="tech-skill-level">Version Control & Git</div>
+            </div>
+          </div>
+
+          <!-- Vercel -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z"/></svg>
+            </div>
+            <div class="tech-skill-info">
+              <div class="tech-skill-name">Vercel</div>
+              <div class="tech-skill-level">Cloud Deployment & Hosting</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSE COMPLETION SECTION -->
+      <section class="resume-section" id="courseSection">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-2 5l9-13h-7l2-5l-9 13h7z"></path></svg>
+          </span>
+          Course Completion
+        </h2>
+
+        <div class="course-card">
+          <div class="course-header">
+            <div>
+              <div class="course-title">Python Full Stack Development</div>
+              <div class="course-subtitle">Comprehensive Full-Stack Web Architecture & Engineering</div>
+            </div>
+            <span class="course-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Course Completed
+            </span>
+          </div>
+
+          <p class="course-desc">
+            Successfully completed intensive practical training in <strong>Python Full Stack Development</strong>, mastering end-to-end web engineering from responsive frontend design and server-side Django frameworks to relational SQL databases and RESTful API integrations.
+          </p>
+
+          <div class="course-curriculum-grid">
+            <div class="curriculum-item">
+              <strong>Backend & API:</strong> Python core programming, Django Web Framework, Django REST Framework (DRF), MVT architecture, session security & authentication.
+            </div>
+            <div class="curriculum-item">
+              <strong>Frontend UI:</strong> HTML, CSS, modern JavaScript (ES6+), Bootstrap responsive grid systems, and foundational React.
+            </div>
+            <div class="curriculum-item">
+              <strong>Databases & SQL:</strong> Relational database design, SQL querying, CRUD operations, SQLite/MySQL, and Django ORM integration.
+            </div>
+            <div class="curriculum-item">
+              <strong>Deployment & Version Control:</strong> Git/GitHub workflows, full-stack application lifecycle, and responsive multi-device testing.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFESSIONAL EXPERIENCE SECTION (8 MONTHS - ALL PROJECTS DELIVERED UNDER THIS EXPERIENCE) -->
+      <section class="resume-section" id="experienceSection">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          </span>
+          Professional Experience
+          <span class="experience-tenure-badge">8 Months Experience</span>
+        </h2>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <div>
+              <div class="experience-role">Full-Stack Web & Python Software Developer</div>
+              <div class="experience-company">Independent Software Engineering & Production Solutions</div>
+            </div>
+            <div class="experience-duration-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>8 Months Experience (March 2026 – Present)</span>
+            </div>
+          </div>
+
+          <p class="experience-desc">
+            Completed <strong>8 months</strong> of production-focused software development, engineering resilient full-stack web platforms, Python / Django REST APIs, and computer vision systems. All projects showcased below were architected, developed, and deployed during this 8-month tenure:
+          </p>
+
+          <ul class="project-bullets" style="margin-bottom: 0.95rem;">
+            <li>Shipped <strong>10+ production-grade web applications & platforms</strong> covering multi-role portals (Admin & User), automotive marketplaces, luxury healthcare, tour reservations, and corporate conference management.</li>
+            <li>Engineered biometric authentication pipelines combining <strong>OpenCV</strong>, <strong>Haar Cascades</strong>, and <strong>Django REST Framework (DRF)</strong> with Pearson correlation matching.</li>
+            <li>Built native Windows endpoint defense solutions implementing real-time security event log monitoring (Event 4625), automated workstation locking, and folder ACL permission manipulation.</li>
+            <li>Created modern, mobile-first responsive UIs leveraging HTML5, CSS3, Tailwind CSS, Bootstrap 5, modern JavaScript (ES6+), and foundational React.js components.</li>
+          </ul>
+
+          <div class="experience-projects-callout">
+            <div class="callout-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="7 13 12 18 17 13"></polyline>
+                <polyline points="7 6 12 11 17 6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <strong>Projects Delivered During 8 Months of Experience:</strong>
+              <span>Explore the complete portfolio of applications engineered and shipped during this tenure (detailed below):</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE PROJECT FILTER -->
+      <div class="project-filter-bar" id="projectFilter">
+        <button class="filter-chip active" data-filter="all">All Projects</button>
+        <button class="filter-chip" data-filter="python">Python & Computer Vision</button>
+        <button class="filter-chip" data-filter="recent">Recent (Oct 2026)</button>
+        <button class="filter-chip" data-filter="fullstack">Web Platforms</button>
+      </div>
+
+      <!-- PYTHON & COMPUTER VISION PROJECTS SECTION (DEDICATED) -->
+      <section class="resume-section project-section" id="pythonProjectsSection">
+        <h2 class="section-title">
+          <span class="section-title-icon" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.35);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          </span>
+          Python & Computer Vision Projects
+        </h2>
+
+        <div class="projects-container">
+
+          <!-- PROJECT 1: BIOMETRIC FACIAL RECOGNITION ATTENDANCE SYSTEM -->
+          <article class="project-card flagship" data-tags="python">
+            <div class="project-header">
+              <div class="project-title-area">
+                <div class="project-title">
+                  <span>Biometric Facial Recognition Attendance System</span>
+                  <span class="project-badge-recent" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);">Computer Vision Flagship</span>
+                </div>
+                <div class="project-category">Enterprise Attendance & Shift Analytics Platform with Real-Time Face Matching</div>
+              </div>
+              <span class="project-date">July – August 2026</span>
+            </div>
+
+            <p class="project-desc">
+              An intelligent, hardware-integrated staff arrival and departure management system combining real-time HTML5 webcam streaming with OpenCV facial recognition algorithms to eliminate proxy clock-ins and automate workforce shift analytics.
+            </p>
+
+            <ul class="project-bullets">
+              <li><strong>Real-Time Facial Recognition Pipeline:</strong> Integrated browser-based video streaming with backend <strong>OpenCV Haar Cascade Classifiers</strong> for face detection and <strong>Pearson Correlation Coefficient</strong> similarity matching against stored biometric templates.</li>
+              <li><strong>Zero-Proxy Anti-Spoofing:</strong> Engineered automated biometric verification during shift clock-in and clock-out events, recording exact timestamps, face match confidence scores, and shift integrity flags.</li>
+              <li><strong>3-Tier Role-Based Access Control (RBAC):</strong> Architected separate portals for <strong>Super Admin</strong> (global policies, match thresholds, system configuration), <strong>Administrator</strong> (employee directories, shift rosters, leave approvals), and <strong>Employee</strong> (self-service clock-in, attendance history, leave applications).</li>
+              <li><strong>Analytics & CSV Export:</strong> Automated daily late-arrival calculations and overtime tracking paired with dynamic monthly performance reporting and one-click CSV export pipelines.</li>
+              <li><strong>Glassmorphic UI Architecture:</strong> Built a modern, responsive layout using Bootstrap 5, custom glassmorphism design tokens, and interactive performance charts.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">Python 3.10+</span>
+              <span class="tech-pill">Django 4.2</span>
+              <span class="tech-pill">Django REST Framework (DRF)</span>
+              <span class="tech-pill">OpenCV (cv2)</span>
+              <span class="tech-pill">Haar Cascades</span>
+              <span class="tech-pill">HTML5 Webcam API</span>
+              <span class="tech-pill">SQLite</span>
+              <span class="tech-pill">Bootstrap 5</span>
+              <span class="tech-pill">CSV Reporting</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: LAPTOP SECURITY - REAL-TIME ENDPOINT DEFENSE SYSTEM -->
+          <article class="project-card flagship" data-tags="python">
+            <div class="project-header">
+              <div class="project-title-area">
+                <div class="project-title">
+                  <span>Laptop Security – Real-Time Endpoint Defense System</span>
+                  <span class="project-badge-recent" style="background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);">Cybersecurity</span>
+                </div>
+                <div class="project-category">Native Python, Django & Computer Vision Endpoint Defense Platform</div>
+              </div>
+              <span class="project-date">September 2026</span>
+            </div>
+
+            <p class="project-desc">
+              An automated, hardware-integrated endpoint defense solution for Windows laptops that detects unauthorized physical and login access, executes instantaneous defensive countermeasures, and safeguards confidential local storage.
+            </p>
+
+            <ul class="project-bullets">
+              <li><strong>Automated Intrusion Detection:</strong> Actively monitors Windows Security Event Logs (Event ID 4625 for logon failures) utilizing a sliding-window failure counter to detect unauthorized access attempts.</li>
+              <li><strong>Forensic Camera Capture & Auto-Lock:</strong> Triggers native Win32 <code>LockWorkStation()</code> on breach, silently captures forensic photos of whoever is sitting in front of the laptop camera via <strong>OpenCV</strong>, and transmits evidence to an audit console.</li>
+              <li><strong>Confidential Folder Vault:</strong> Programmatically manages Windows ACL permissions (<code>icacls</code>) and system attribute flags (<code>attrib +h +s</code>) to lock and hide confidential directory trees, backed by Master Emergency PIN recovery.</li>
+              <li><strong>Web Security Operations Center (SOC):</strong> Built a live Django dashboard displaying real-time CPU/RAM/Disk telemetry, intruder photograph galleries, lockout timers, and one-click Emergency Lockdown triggers.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">Python 3.10</span>
+              <span class="tech-pill">Django</span>
+              <span class="tech-pill">OpenCV (cv2)</span>
+              <span class="tech-pill">Win32 API</span>
+              <span class="tech-pill">Windows ACLs (icacls)</span>
+              <span class="tech-pill">Security Event Log API</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- FULL-STACK WEB APPLICATIONS SECTION -->
+      <section class="resume-section project-section" id="webProjectsSection">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </span>
+          Full-Stack Web Applications & Digital Platforms
+        </h2>
+
+        <div class="projects-container">
+
+          <!-- PROJECT 1: USED CAR MARKETPLACE (LATEST OCT 20, 2026) -->
+          <article class="project-card flagship" data-tags="recent fullstack">
+            <div class="project-header">
+              <div class="project-title-area">
+                <div class="project-title">
+                  <span>Used Car Marketplace Platform</span>
+                  <span class="project-badge-newest">Latest Release</span>
+                </div>
+                <div class="project-category">Multi-Page Automotive Marketplace with Dual Portals & Financing Engine</div>
+              </div>
+              <span class="project-date">October 20, 2026</span>
+            </div>
+
+            <p class="project-desc">
+              A comprehensive automotive marketplace built with ultra-modern 3D responsive cards, dual administrative and consumer portals, multi-attribute inventory search, vehicle valuation calculators, and financing workflows.
+            </p>
+
+            <ul class="project-bullets">
+              <li><strong>Comprehensive Portal Architecture:</strong> Developed standalone <strong>Admin Dashboard</strong> (dealership analytics, listing approvals, lead management) and <strong>User Dashboard</strong> (saved vehicles, test-drive appointments, offer tracking).</li>
+              <li><strong>Inventory & Valuation Engine:</strong> Built interactive vehicle search filtering by make, model, price, mileage, body style, and fuel type paired with an automated <em>"Sell Your Car"</em> instant appraisal tool.</li>
+              <li><strong>Inspection & Financing Systems:</strong> Integrated comprehensive multi-point vehicle inspection report displays and dynamic EMI loan calculation tools with real-time interest adjustments.</li>
+              <li><strong>Modern Automotive Design:</strong> Crafted an ultra-sleek UI featuring Tailwind CSS, Outfit & Plus Jakarta Sans typography, dark mode support, and interactive 3D perspective cards.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">JavaScript ES6+</span>
+              <span class="tech-pill">Dual Admin/User Portals</span>
+              <span class="tech-pill">Automotive Valuation Engine</span>
+              <span class="tech-pill">EMI Calculator</span>
+              <span class="tech-pill">Mobile-First UI</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: DERMATOLOGY & COSMETIC SKIN CLINIC -->
+          <article class="project-card flagship" data-tags="recent fullstack">
+            <div class="project-header">
+              <div class="project-title-area">
+                <div class="project-title">
+                  <span>Dermatology & Cosmetic Skin Clinic Platform</span>
+                  <span class="project-badge-recent">Recent</span>
+                </div>
+                <div class="project-category">Luxury Healthcare Web Application with Appointment & Treatment Engine</div>
+              </div>
+              <span class="project-date">October 16, 2026</span>
+            </div>
+
+            <p class="project-desc">
+              A luxury aesthetic and clinical dermatology web application engineered with bespoke aesthetic design tokens, role-based patient/staff portals, and interactive clinical consultation features.
+            </p>
+
+            <ul class="project-bullets">
+              <li><strong>Dual-Role Clinic Dashboards:</strong> Architected complete <strong>Admin Dashboard</strong> (patient rosters, revenue metrics, appointment queue management) and <strong>Patient Portal</strong> (treatment history, doctor notes, upcoming sessions).</li>
+              <li><strong>Interactive Before & After Image Sliders:</strong> Implemented hardware-accelerated interactive image comparison sliders demonstrating clinical transformation results.</li>
+              <li><strong>Procedures & Physician Directories:</strong> Designed structured directories for medical procedures (HydraFacial, Laser Skin Resurfacing, Peels) with physician bio cards and instant booking modal workflows.</li>
+              <li><strong>Luxury Healthcare Styling:</strong> Created custom color token systems (Warm Alabaster, Champagne Gold, Deep Charcoal Jade) optimized for high visual prestige across all viewports.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">JavaScript ES6+</span>
+              <span class="tech-pill">Before & After Slider UI</span>
+              <span class="tech-pill">Admin / Patient Portals</span>
+              <span class="tech-pill">Modal Workflows</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: TRAVEL AGENCY & HOLIDAY PACKAGES -->
+          <article class="project-card" data-tags="recent fullstack">
+            <div class="project-header">
+              <div class="project-title-area">
+                <div class="project-title">
+                  <span>Travel Agency & Holiday Packages Portal</span>
+                  <span class="project-badge-recent">Recent</span>
+                </div>
+                <div class="project-category">Modern Vacation Discovery & Tour Reservation Platform</div>
+              </div>
+              <span class="project-date">October 16, 2026</span>
+            </div>
+
+            <p class="project-desc">
+              End-to-end travel itinerary and vacation discovery portal featuring interactive catalog filtering, domestic and international vacation itineraries, and customer reservation dashboards.
+            </p>
+
+            <ul class="project-bullets">
+              <li>Engineered interactive tour catalogs for domestic destinations, international tours, and family vacation packages with real-time pricing and availability calculators.</li>
+              <li>Implemented user reservation dashboard tracking travel confirmations, booking history, and downloadable travel guides.</li>
+              <li>Crafted responsive, high-performance UI with smooth scroll transitions, mobile drawer navigation, and accessible forms.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">HTML5 / CSS3</span>
+              <span class="tech-pill">JavaScript ES6</span>
+              <span class="tech-pill">User & Admin Dashboards</span>
+              <span class="tech-pill">CSS Flexbox / Grid</span>
+              <span class="tech-pill">SVG Vector Systems</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: CORPORATE EVENT PLANNING & CONFERENCE MANAGEMENT -->
+          <article class="project-card" data-tags="recent fullstack">
+            <div class="project-header">
+              <div class="project-title-area">
+                <div class="project-title">
+                  <span>Corporate Event Planning & Conference Management Firm</span>
+                  <span class="project-badge-recent">Recent</span>
+                </div>
+                <div class="project-category">Enterprise Event Scheduling & Delegate Ticketing UI</div>
+              </div>
+              <span class="project-date">October 15, 2026</span>
+            </div>
+
+            <p class="project-desc">
+              Enterprise summit and conference management web system designed for large-scale corporate event planning, keynote speaker coordination, and delegate registrations.
+            </p>
+
+            <ul class="project-bullets">
+              <li>Built multi-track conference schedule displays with speaker bios, session tracks, and venue locator integration.</li>
+              <li>Streamlined attendee registration flows with form validation, package selection, and confirmation receipts.</li>
+            </ul>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">HTML5 / Modern CSS</span>
+              <span class="tech-pill">Modular JavaScript</span>
+              <span class="tech-pill">Conference Schedules</span>
+              <span class="tech-pill">Form Validation</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Additional Projects Grid (Bakery, Gym, Martial Arts, React App) -->
+        <div style="margin-top: 2rem;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--text-highlight); margin-bottom: 0.85rem;">
+            Additional Developed Applications & Specialized Prototypes
+          </h3>
+
+          <div class="mini-projects-grid">
+            <div class="mini-project-card">
+              <div class="mini-project-title">Bagel Bakery & Specialty Café Platform</div>
+              <div class="mini-project-date">October 8, 2026</div>
+              <div class="mini-project-desc">Artisanal bakery storefront featuring interactive daily menu catalogs, online catering orders, image galleries, and responsive visit booking.</div>
+              <div class="project-tech-stack">
+                <span class="tech-pill">HTML5</span>
+                <span class="tech-pill">CSS3</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">Menu UI</span>
+              </div>
+            </div>
+
+            <div class="mini-project-card">
+              <div class="mini-project-title">Local Gym & Fitness Center Platform</div>
+              <div class="mini-project-date">September 2026</div>
+              <div class="mini-project-desc">Interactive gym web app featuring tiered membership selectors, class rosters, trainer directories, and interactive motion animations.</div>
+              <div class="project-tech-stack">
+                <span class="tech-pill">Vanilla JS</span>
+                <span class="tech-pill">motion.js</span>
+                <span class="tech-pill">Tiered Plans</span>
+                <span class="tech-pill">Rosters</span>
+              </div>
+            </div>
+
+            <div class="mini-project-card">
+              <div class="mini-project-title">Kids Martial Arts Academy Portal</div>
+              <div class="mini-project-date">October 7, 2026</div>
+              <div class="mini-project-desc">Youth athletic academy website highlighting confidence-building programs, belt-progression curriculum, and trial class booking.</div>
+              <div class="project-tech-stack">
+                <span class="tech-pill">Responsive Design</span>
+                <span class="tech-pill">Booking Modals</span>
+                <span class="tech-pill">CSS Grid</span>
+              </div>
+            </div>
+
+            <div class="mini-project-card">
+              <div class="mini-project-title">Modern Course Learning Hub (React 19)</div>
+              <div class="mini-project-date">September 2026</div>
+              <div class="mini-project-desc">Single-page modern educational application built with React 19 and Vite featuring modular course browsing components.</div>
+              <div class="project-tech-stack">
+                <span class="tech-pill">React 19</span>
+                <span class="tech-pill">Vite</span>
+                <span class="tech-pill">ESLint 10</span>
+                <span class="tech-pill">Component Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- PAPER PRESENTATION SECTION (from uploaded specification) -->
+      <section class="resume-section" id="paperPresentationSection">
+        <h2 class="section-title">
+          <span class="section-title-icon" style="background: rgba(129, 140, 248, 0.15); border-color: rgba(129, 140, 248, 0.35); color: #818cf8;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+            </svg>
+          </span>
+          Paper Presentation
+        </h2>
+
+        <div class="paper-card">
+          <div class="paper-header">
+            <div>
+              <div class="paper-title">Human Stress Detection Using Convolutional Neural Networks: An In Depth Analysis</div>
+              <div class="paper-subtitle">Deep Learning • Computer Vision & Neural Telemetry</div>
+            </div>
+            <span class="paper-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Paper Presentation
+            </span>
+          </div>
+
+          <p class="paper-desc">
+            Presented technical research paper conducting an in-depth analytical evaluation of <strong>Convolutional Neural Network (CNN)</strong> architectures applied to automated human stress detection and cognitive load classification:
+          </p>
+
+          <ul class="paper-bullets">
+            <li><strong>Human Stress Detection Using Convolutional Neural Networks: An In Depth Analysis:</strong> Investigated multi-tier CNN feature extraction layers trained on facial emotion landmarks, ocular blink dynamics, and micro-expression datasets.</li>
+            <li><strong>Real-Time Facial Stress Telemetry:</strong> Evaluated real-time camera feed inferencing pipelines to detect elevated stress indicators across varying illumination, head poses, and occlusion conditions.</li>
+            <li><strong>Accuracy & Performance Benchmarking:</strong> Conducted comparative analysis against conventional machine learning baselines, demonstrating the superior feature extraction accuracy of deep convolutional networks.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section class="resume-section" id="educationSection">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </span>
+          Education
+        </h2>
+
+        <div class="education-grid">
+          <!-- MCA -->
+          <div class="education-card">
+            <div>
+              <div class="edu-degree">Master of Computer Applications (MCA)</div>
+              <div class="edu-institution">Hindustan College Of Arts And Science</div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-years">2023 – 2025</span>
+              <span class="edu-score-badge">CGPA: 7.62</span>
+            </div>
+          </div>
+
+          <!-- B.Sc. Computer Science -->
+          <div class="education-card">
+            <div>
+              <div class="edu-degree">B.Sc. Computer Science</div>
+              <div class="edu-institution">K.S. Rangasamy College of Arts and Science (Autonomous)</div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-years">2020 – 2023</span>
+              <span class="edu-score-badge">CGPA: 7.271</span>
+            </div>
+          </div>
+
+          <!-- HSC -->
+          <div class="education-card">
+            <div>
+              <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+              <div class="edu-institution">Sri Vidya Mandir Matric Hr. Sec. School, Dharmapuri</div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-years">2019 – 2020</span>
+              <span class="edu-score-badge">Percentage: 64%</span>
+            </div>
+          </div>
+
+          <!-- SSLC -->
+          <div class="education-card">
+            <div>
+              <div class="edu-degree">Secondary School Leaving Certificate (SSLC)</div>
+              <div class="edu-institution">St. Paul's Matric Hr. Sec. School, Dharmapuri</div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-years">2017 – 2018</span>
+              <span class="edu-score-badge">Percentage: 68%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS & TECHNICAL STRENGTHS -->
+      <section class="resume-section">
+        <h2 class="section-title">
+          <span class="section-title-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </span>
+          Highlights & Technical Strengths
+        </h2>
+        <div class="info-card">
+          <h4>Python Full-Stack & Engineering Specialization</h4>
+          <div class="subtitle">Production Practice & Practical Implementations</div>
+          <div class="details">
+            <p>• <strong>Full-Stack & Web:</strong> Python (Django, DRF), JavaScript (ES6+), Tailwind CSS, Bootstrap 5, Basic Knowledge in React.js.</p>
+            <p style="margin-top: 0.4rem;">• <strong>Applied Computer Vision:</strong> Real-time webcam feeds, Haar Cascades, OpenCV biometric correlation matching.</p>
+            <p style="margin-top: 0.4rem;">• <strong>Experience & Research:</strong> 8 Months of dedicated full-stack software development delivering 10+ production platforms; Presented research on Human Stress Detection Using CNNs.</p>
+            <p style="margin-top: 0.4rem;">• <strong>Product Execution:</strong> Rapid prototyping, multi-role dashboard systems, high-fidelity responsive styling.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="resume-footer">
+        <div>
+          <span>Crafted with clean, semantic HTML5, CSS3 & JavaScript</span>
+        </div>
+        <div>
+          <span>Tamilselvan • <a href="mailto:tamilselvan3738@gmail.com" style="color: inherit; text-decoration: underline;">tamilselvan3738@gmail.com</a> • <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Vercel</a></span>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- TOAST NOTIFICATION FOR COPY ACTIONS -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Email address copied to clipboard!</span>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. THEME TOGGLE (DARK / LIGHT MODE)
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      const themeBtnText = document.getElementById('themeBtnText');
+      const htmlElement = document.documentElement;
+
+      // MOBILE NAVBAR HAMBURGER MENU TOGGLE
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const actionButtonsMenu = document.getElementById('actionButtonsMenu');
+      const menuIconBars = document.getElementById('menuIconBars');
+      const menuIconClose = document.getElementById('menuIconClose');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (mobileMenuBtn && actionButtonsMenu) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = actionButtonsMenu.classList.toggle('is-open');
+          mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+          if (menuIconBars && menuIconClose) {
+            menuIconBars.style.display = isOpen ? 'none' : 'block';
+            menuIconClose.style.display = isOpen ? 'block' : 'none';
+          }
+        });
+
+        // Close mobile menu when clicking any section nav link
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (actionButtonsMenu.classList.contains('is-open')) {
+              actionButtonsMenu.classList.remove('is-open');
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+              if (menuIconBars && menuIconClose) {
+                menuIconBars.style.display = 'block';
+                menuIconClose.style.display = 'none';
+              }
+            }
+          });
+        });
+
+        // Close when clicking outside of the navbar
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('#topNavbar') && actionButtonsMenu.classList.contains('is-open')) {
+            actionButtonsMenu.classList.remove('is-open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            if (menuIconBars && menuIconClose) {
+              menuIconBars.style.display = 'block';
+              menuIconClose.style.display = 'none';
+            }
+          }
+        });
+
+        // Close on window resize above 768px
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768 && actionButtonsMenu.classList.contains('is-open')) {
+            actionButtonsMenu.classList.remove('is-open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            if (menuIconBars && menuIconClose) {
+              menuIconBars.style.display = 'block';
+              menuIconClose.style.display = 'none';
+            }
+          }
+        });
+
+        // Sticky navbar elevation effect on scroll
+        const topNavbar = document.getElementById('topNavbar');
+        window.addEventListener('scroll', () => {
+          if (topNavbar) {
+            if (window.scrollY > 15) {
+              topNavbar.classList.add('scrolled');
+            } else {
+              topNavbar.classList.remove('scrolled');
+            }
+          }
+        }, { passive: true });
+      }
+
+      // Check saved preference or default to dark
+      const savedTheme = localStorage.getItem('resume_theme') || 'dark';
+      setTheme(savedTheme);
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+      });
+
+      function setTheme(theme) {
+        htmlElement.setAttribute('data-theme', theme);
+        localStorage.setItem('resume_theme', theme);
+
+        if (theme === 'light') {
+          themeBtnText.textContent = 'Dark Mode';
+          themeIcon.innerHTML = `
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          `;
+        } else {
+          themeBtnText.textContent = 'Light Mode';
+          themeIcon.innerHTML = `
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          `;
+        }
+      }
+
+      // 2. COPY EMAIL TO CLIPBOARD WITH TOAST FEEDBACK
+      const copyEmailBtn = document.getElementById('copyEmailBtn');
+      const toastNotification = document.getElementById('toastNotification');
+      const toastMessage = document.getElementById('toastMessage');
+      const email = 'tamilselvan3738@gmail.com';
+
+      copyEmailBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast('Email address copied to clipboard!');
+        }).catch(() => {
+          const tempInput = document.createElement('input');
+          tempInput.value = email;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          showToast('Email address copied to clipboard!');
+        });
+      });
+
+      function showToast(message) {
+        toastMessage.textContent = message;
+        toastNotification.classList.add('show');
+        setTimeout(() => {
+          toastNotification.classList.remove('show');
+        }, 2800);
+      }
+
+      // 3. PROJECT FILTERING LOGIC
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const projectCards = document.querySelectorAll('.project-card');
+      const projectSections = document.querySelectorAll('.project-section');
+
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          // Update active state
+          filterChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+
+          const filterValue = chip.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const tags = card.getAttribute('data-tags') || '';
+            if (filterValue === 'all' || tags.includes(filterValue)) {
+              card.style.display = 'block';
+              card.style.animation = 'fadeIn 0.3s ease forwards';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Harmonize project section visibility
+          projectSections.forEach(sec => {
+            const cards = sec.querySelectorAll('.project-card');
+            const hasVisibleCard = Array.from(cards).some(card => card.style.display !== 'none');
+            const miniGridContainer = sec.querySelector('.mini-projects-grid')?.parentElement;
+
+            if (filterValue === 'all') {
+              sec.style.display = 'block';
+              if (miniGridContainer) miniGridContainer.style.display = 'block';
+            } else if (hasVisibleCard) {
+              sec.style.display = 'block';
+              if (miniGridContainer) miniGridContainer.style.display = (filterValue === 'fullstack') ? 'block' : 'none';
+            } else {
+              sec.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
