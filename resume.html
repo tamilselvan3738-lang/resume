@@ -2088,13 +2088,23 @@
           </button>
 
           <!-- Print / PDF Button -->
-          <button class="btn btn-primary" id="downloadPdfBtn" aria-label="Download ATS Resume as PDF with Active Clickable Links">
+          <a href="Tamilselvan_Resume.pdf" download="Tamilselvan_Resume.pdf" class="btn btn-primary" id="downloadPdfBtn" aria-label="Download Clean ATS Resume as PDF with Active Clickable Links">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
             <span>Download ATS PDF</span>
+          </a>
+
+          <!-- Print / Custom Settings Button -->
+          <button class="btn btn-secondary" id="openPrintModalBtn" aria-label="Print Options & Guidance" title="Print to Paper or Browser Settings">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print</span>
           </button>
         </div>
       </div>
@@ -2776,7 +2786,7 @@
 
       <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
         <button class="btn btn-secondary" onclick="document.getElementById('atsModalBackdrop').classList.remove('show')">Close Audit</button>
-        <button class="btn btn-primary" id="modalDownloadPdfBtn">Download ATS PDF</button>
+        <a href="Tamilselvan_Resume.pdf" download="Tamilselvan_Resume.pdf" class="btn btn-primary" id="modalDownloadPdfBtn" style="text-decoration: none;">Download ATS PDF</a>
       </div>
     </div>
   </div>
@@ -2996,12 +3006,32 @@ EDUCATION
         if (pdfModalBackdrop) pdfModalBackdrop.classList.remove('show');
       }
 
-      if (downloadPdfBtn) downloadPdfBtn.addEventListener('click', openPdfModal);
-      if (modalDownloadPdfBtn) modalDownloadPdfBtn.addEventListener('click', () => {
-        const atsModalBackdrop = document.getElementById('atsModalBackdrop');
-        if (atsModalBackdrop) atsModalBackdrop.classList.remove('show');
-        openPdfModal();
-      });
+      const openPrintModalBtn = document.getElementById('openPrintModalBtn');
+      const directModalDownloadBtn = document.getElementById('directModalDownloadBtn');
+
+      if (downloadPdfBtn) {
+        downloadPdfBtn.addEventListener('click', (e) => {
+          showToast('📥 Downloading clean ATS PDF (17 active clickable links)...');
+        });
+      }
+
+      if (openPrintModalBtn) openPrintModalBtn.addEventListener('click', openPdfModal);
+
+      if (directModalDownloadBtn) {
+        directModalDownloadBtn.addEventListener('click', () => {
+          closePdfModal();
+          showToast('📥 Downloading clean ATS PDF (17 active clickable links)...');
+        });
+      }
+
+      if (modalDownloadPdfBtn) {
+        modalDownloadPdfBtn.addEventListener('click', () => {
+          const atsModalBackdrop = document.getElementById('atsModalBackdrop');
+          if (atsModalBackdrop) atsModalBackdrop.classList.remove('show');
+          showToast('📥 Downloading clean ATS PDF (17 active clickable links)...');
+        });
+      }
+
       if (pdfModalCloseBtn) pdfModalCloseBtn.addEventListener('click', closePdfModal);
       if (pdfModalCancelBtn) pdfModalCancelBtn.addEventListener('click', closePdfModal);
 
@@ -3009,7 +3039,7 @@ EDUCATION
         pdfModalProceedBtn.addEventListener('click', () => {
           closePdfModal();
           const origTitle = document.title;
-          document.title = "Tamilselvan_Resume_FullStack";
+          document.title = ""; // Empty title prevents Chrome from printing the page title in the header!
           setTimeout(() => {
             window.print();
             setTimeout(() => {
@@ -3020,10 +3050,10 @@ EDUCATION
       }
 
       window.addEventListener('beforeprint', () => {
-        document.title = "Tamilselvan_Resume_FullStack";
+        document.title = "";
       });
       window.addEventListener('afterprint', () => {
-        document.title = "Tamilselvan - Full-Stack Web Developer & Python Engineer (ATS Resume)";
+        document.title = "Tamilselvan.S - Full-Stack Web Developer & Python Engineer (ATS Resume)";
       });
 
       if (pdfModalBackdrop) {
@@ -3119,48 +3149,52 @@ EDUCATION
     <div class="ats-modal-sheet" style="max-width: 580px;">
       <div class="ats-modal-header">
         <div>
-          <div class="ats-modal-title" id="pdfModalTitle">Download Clean ATS Resume (PDF)</div>
-          <div class="ats-modal-sub">Zero Header/Footer URLs • Active Clickable Links for Git, Vercel &amp; LinkedIn</div>
+          <div class="ats-modal-title" id="pdfModalTitle">Export Clean ATS Resume (PDF)</div>
+          <div class="ats-modal-sub">Zero Browser Timestamps &bull; Zero URLs &bull; 17 Active Clickable Hyperlinks</div>
         </div>
         <button class="btn btn-secondary" id="pdfModalCloseBtn" style="padding: 0.35rem 0.65rem;" aria-label="Close modal">✕</button>
       </div>
 
       <div class="ats-modal-body" style="padding: 1.15rem 0 0.5rem 0;">
-        <!-- CRITICAL INSTRUCTION: HIDE BROWSER URL & DATE -->
-        <div style="background: rgba(239, 68, 68, 0.08); border: 1.5px solid rgba(239, 68, 68, 0.35); border-radius: var(--radius-md); padding: 0.95rem 1.15rem; margin-bottom: 0.95rem;">
-          <div style="font-weight: 700; color: #ef4444; margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.45rem; font-size: 0.94rem;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-            <span>To Remove Date, Title &amp; Website URL from Every Page:</span>
+        
+        <!-- OPTION 1: INSTANT DIRECT DOWNLOAD (RECOMMENDED) -->
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: var(--radius-md); padding: 1.1rem; margin-bottom: 1.15rem;">
+          <div style="font-weight: 700; color: #10b981; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.45rem; font-size: 0.96rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Option 1: Instant Clean PDF (Recommended)</span>
           </div>
-          <p style="margin: 0; font-size: 0.86rem; color: var(--text-main); line-height: 1.6;">
-            In the Print Preview window under <strong>"More settings"</strong>:<br>
-            ❌ <strong>UNCHECK "Headers and footers"</strong> — this completely prevents the date at the top and the <code>resume-rho-ruddy-28.vercel.app</code> URL at the bottom from printing!
+          <p style="margin: 0 0 0.85rem 0; font-size: 0.86rem; color: var(--text-main); line-height: 1.55;">
+            Directly download the verified, pre-rendered ATS PDF file. Guaranteed <strong>zero dates</strong>, <strong>zero localhost/vercel URLs</strong>, <strong>no sliced cards</strong>, and <strong>all 17 clickable hyperlinks</strong>.
           </p>
-        </div>
-
-        <!-- ACTIVE HYPERLINKS INSTRUCTION -->
-        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: var(--radius-md); padding: 0.95rem 1.15rem; margin-bottom: 1.25rem;">
-          <div style="font-weight: 700; color: var(--text-highlight); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.45rem; font-size: 0.94rem;">
-            <span>🔗 Destination Setting (Keeps Links Clickable):</span>
-          </div>
-          <p style="margin: 0; font-size: 0.86rem; color: var(--text-main); line-height: 1.6;">
-            Set Destination to <strong>"Save as PDF"</strong> (do not choose "Microsoft Print to PDF"). All links to <strong>GitHub</strong>, <strong>Vercel</strong>, and <strong>LinkedIn</strong> will be active and clickable!
-          </p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-          <button class="btn btn-primary" id="pdfModalProceedBtn" style="width: 100%; justify-content: center; padding: 0.75rem 1.25rem; font-size: 0.95rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="Tamilselvan_Resume.pdf" download="Tamilselvan_Resume.pdf" class="btn btn-primary" id="directModalDownloadBtn" style="width: 100%; justify-content: center; padding: 0.75rem 1.25rem; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            <span>Open Save as PDF Dialog</span>
-          </button>
-          <button class="btn btn-secondary" id="pdfModalCancelBtn" style="width: 100%; justify-content: center; padding: 0.55rem 1rem;">
-            Cancel
+            <span>Download Clean ATS PDF (One-Click)</span>
+          </a>
+        </div>
+
+        <!-- OPTION 2: PRINT VIA BROWSER DIALOG -->
+        <div style="background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-md); padding: 1rem 1.15rem; margin-bottom: 1.15rem;">
+          <div style="font-weight: 700; color: var(--text-highlight); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.45rem; font-size: 0.92rem;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            <span>Option 2: Browser Print Dialog (Physical Printer or Custom PDF)</span>
+          </div>
+          <div style="background: rgba(239, 68, 68, 0.08); border-left: 3px solid #ef4444; padding: 0.65rem 0.85rem; margin-bottom: 0.75rem; border-radius: 4px;">
+            <p style="margin: 0; font-size: 0.82rem; color: var(--text-main); line-height: 1.55;">
+              <strong style="color: #ef4444;">Important to remove browser header/footer:</strong> In Chrome's print preview window under <em>More settings &rarr; Options</em>, <strong>UNCHECK "Headers and footers"</strong>. This prevents Chrome from printing the date at the top and the URL at the bottom.
+            </p>
+          </div>
+          <button class="btn btn-secondary" id="pdfModalProceedBtn" style="width: 100%; justify-content: center; padding: 0.65rem 1.15rem; font-size: 0.88rem;">
+            <span>Open Browser Print Dialog (Ctrl+P)</span>
           </button>
         </div>
+
+        <button class="btn btn-secondary" id="pdfModalCancelBtn" style="width: 100%; justify-content: center; padding: 0.5rem 1rem;">
+          Close
+        </button>
       </div>
     </div>
   </div>
