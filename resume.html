@@ -1247,14 +1247,28 @@
 
     /* =====================================================================
        PRINT STYLESHEET (@media print - 100% CLEAN ATS COMPLIANT)
+       Removes browser-injected header (date, title) & footer (URL, page)
        ===================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0mm !important;
+    }
+
     @media print {
-      body {
+      @page {
+        size: A4 portrait;
+        margin: 0mm !important;
+      }
+
+      html, body {
         background-color: #ffffff !important;
         color: #111827 !important;
+        margin: 0 !important;
         padding: 0 !important;
-        font-size: 9.5pt !important;
+        font-size: 9.3pt !important;
         line-height: 1.45 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
       .ambient-glow,
@@ -1275,8 +1289,12 @@
       .resume-sheet {
         box-shadow: none !important;
         border: none !important;
-        padding: 0.35in 0.45in !important;
+        padding: 12mm 16mm 14mm 16mm !important; /* Elegant document margin padding */
         background: #ffffff !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       .resume-sheet::before {
@@ -1860,7 +1878,7 @@
 
       <!-- CANDIDATE ATS LETTERHEAD HEADER -->
       <header class="ats-header">
-        <h1 class="ats-name">TAMILSELVAN</h1>
+        <h1 class="ats-name">TAMILSELVAN.S</h1>
         <div class="ats-title">Full-Stack Web Developer &amp; Python / Django Software Engineer</div>
         
         <div class="ats-contact-bar">
@@ -2761,11 +2779,23 @@ EDUCATION
       if (pdfModalProceedBtn) {
         pdfModalProceedBtn.addEventListener('click', () => {
           closePdfModal();
+          const origTitle = document.title;
+          document.title = "Tamilselvan_Resume_FullStack";
           setTimeout(() => {
             window.print();
+            setTimeout(() => {
+              document.title = origTitle;
+            }, 1000);
           }, 300);
         });
       }
+
+      window.addEventListener('beforeprint', () => {
+        document.title = "Tamilselvan_Resume_FullStack";
+      });
+      window.addEventListener('afterprint', () => {
+        document.title = "Tamilselvan - Full-Stack Web Developer & Python Engineer (ATS Resume)";
+      });
 
       if (pdfModalBackdrop) {
         pdfModalBackdrop.addEventListener('click', (e) => {
@@ -2857,26 +2887,36 @@ EDUCATION
   </script>
   <!-- PDF DOWNLOAD GUIDANCE MODAL (ENSURES CLICKABLE HYPERLINKS) -->
   <div class="ats-modal-backdrop" id="pdfModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
-    <div class="ats-modal-sheet" style="max-width: 560px;">
+    <div class="ats-modal-sheet" style="max-width: 580px;">
       <div class="ats-modal-header">
         <div>
-          <div class="ats-modal-title" id="pdfModalTitle">Download ATS Resume (PDF)</div>
-          <div class="ats-modal-sub">Guaranteed Active Clickable Links for Git, Vercel &amp; LinkedIn</div>
+          <div class="ats-modal-title" id="pdfModalTitle">Download Clean ATS Resume (PDF)</div>
+          <div class="ats-modal-sub">Zero Header/Footer URLs • Active Clickable Links for Git, Vercel &amp; LinkedIn</div>
         </div>
         <button class="btn btn-secondary" id="pdfModalCloseBtn" style="padding: 0.35rem 0.65rem;" aria-label="Close modal">✕</button>
       </div>
 
-      <div class="ats-modal-body" style="padding: 1.25rem 0 0.5rem 0;">
-        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: var(--radius-md); padding: 1.15rem; margin-bottom: 1.25rem;">
-          <div style="font-weight: 700; color: var(--text-highlight); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.98rem;">
-            <span>💡 How to ensure links are active &amp; clickable in your PDF:</span>
+      <div class="ats-modal-body" style="padding: 1.15rem 0 0.5rem 0;">
+        <!-- CRITICAL INSTRUCTION: HIDE BROWSER URL & DATE -->
+        <div style="background: rgba(239, 68, 68, 0.08); border: 1.5px solid rgba(239, 68, 68, 0.35); border-radius: var(--radius-md); padding: 0.95rem 1.15rem; margin-bottom: 0.95rem;">
+          <div style="font-weight: 700; color: #ef4444; margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.45rem; font-size: 0.94rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            <span>To Remove Date, Title &amp; Website URL from Every Page:</span>
           </div>
-          <ol style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-main); line-height: 1.65;">
-            <li>Click <strong>"Open Save as PDF Dialog"</strong> below.</li>
-            <li>In the printer Destination dropdown, select <strong>"Save as PDF"</strong> <em>(do NOT select "Microsoft Print to PDF", which strips links)</em>.</li>
-            <li>Ensure <strong>"Background graphics"</strong> is checked if you want colors preserved.</li>
-            <li>Click <strong>Save</strong> — your downloaded PDF will have active, clickable links for <strong>Git</strong>, <strong>Vercel</strong>, <strong>LinkedIn</strong>, and <strong>Email</strong>!</li>
-          </ol>
+          <p style="margin: 0; font-size: 0.86rem; color: var(--text-main); line-height: 1.6;">
+            In the Print Preview window under <strong>"More settings"</strong>:<br>
+            ❌ <strong>UNCHECK "Headers and footers"</strong> — this completely prevents the date at the top and the <code>resume-rho-ruddy-28.vercel.app</code> URL at the bottom from printing!
+          </p>
+        </div>
+
+        <!-- ACTIVE HYPERLINKS INSTRUCTION -->
+        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: var(--radius-md); padding: 0.95rem 1.15rem; margin-bottom: 1.25rem;">
+          <div style="font-weight: 700; color: var(--text-highlight); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.45rem; font-size: 0.94rem;">
+            <span>🔗 Destination Setting (Keeps Links Clickable):</span>
+          </div>
+          <p style="margin: 0; font-size: 0.86rem; color: var(--text-main); line-height: 1.6;">
+            Set Destination to <strong>"Save as PDF"</strong> (do not choose "Microsoft Print to PDF"). All links to <strong>GitHub</strong>, <strong>Vercel</strong>, and <strong>LinkedIn</strong> will be active and clickable!
+          </p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 0.65rem;">
