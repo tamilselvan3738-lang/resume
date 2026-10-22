@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tamilselvan - Full-Stack Web Developer & Python Engineer (ATS Resume)</title>
+  <title>Tamilselvan.S - Full-Stack Web Developer & Python Engineer (ATS Resume)</title>
   <meta name="description" content="Professional ATS-Optimized Resume of Tamilselvan - Full-Stack Web Developer & Python / Django Software Engineer with 8 Months of Experience.">
   
   <!-- Google Fonts: Space Grotesk (Tech Headings), Plus Jakarta Sans (Clean ATS Body), JetBrains Mono (Keywords & Metadata) -->
@@ -1249,15 +1249,18 @@
        PRINT STYLESHEET (@media print - 100% CLEAN ATS COMPLIANT)
        Removes browser-injected header (date, title) & footer (URL, page)
        ===================================================================== */
+        /* =====================================================================
+       PRINT STYLESHEET - ZERO BROWSER HEADERS/FOOTERS & BALANCED ALIGNMENT
+       ===================================================================== */
     @page {
       size: A4 portrait;
-      margin: 12mm 12mm 12mm 12mm !important; /* EXACT EQUAL 12mm MARGIN ON TOP, BOTTOM, LEFT, RIGHT FOR EVERY PAGE */
+      margin: 0mm !important; /* Completely eliminates date, title, and URL */
     }
 
     @media print {
       @page {
         size: A4 portrait;
-        margin: 12mm 12mm 12mm 12mm !important; /* EXACT EQUAL 12mm ON EVERY SINGLE PAGE */
+        margin: 0mm !important;
       }
 
       *, *::before, *::after {
@@ -1293,10 +1296,43 @@
         padding: 0 !important;
       }
 
+      /* Repeating Table Spacers - Equal 12mm Top & Bottom on EVERY Page */
+      .print-page-table {
+        display: table !important;
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .print-spacer-header {
+        display: table-header-group !important;
+      }
+
+      .print-spacer-footer {
+        display: table-footer-group !important;
+      }
+
+      .print-spacer-top {
+        height: 12mm !important; /* Top space on EVERY PAGE */
+        width: 100% !important;
+      }
+
+      .print-spacer-bottom {
+        height: 12mm !important; /* Bottom space on EVERY PAGE */
+        width: 100% !important;
+      }
+
+      .print-content-cell {
+        display: table-cell !important;
+        padding: 0 13mm !important; /* Left & Right space on EVERY PAGE */
+        vertical-align: top !important;
+      }
+
       .resume-sheet {
         box-shadow: none !important;
         border: none !important;
-        padding: 0 !important; /* All equal margins governed strictly by @page (12mm all sides) */
+        padding: 0 !important;
         margin: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -1307,7 +1343,7 @@
         display: none !important;
       }
 
-      /* Candidate Header - Balanced & Centered */
+      /* Candidate Header */
       .ats-header {
         text-align: center !important;
         margin-bottom: 4pt !important;
@@ -1323,7 +1359,7 @@
 
       .ats-title {
         color: #0284c7 !important;
-        font-size: 10.2pt !important;
+        font-size: 10pt !important;
         font-weight: 700 !important;
         letter-spacing: 0.01em !important;
         margin-bottom: 3.5pt !important;
@@ -1350,7 +1386,7 @@
       .project-ext-link[href],
       .print-link[href] {
         display: inline-block !important;
-        color: #0366d6 !important; /* Authentic Clickable PDF Hyperlink Blue */
+        color: #0366d6 !important;
         text-decoration: underline !important;
         text-decoration-color: #0366d6 !important;
         text-underline-offset: 1.5pt !important;
@@ -1386,9 +1422,9 @@
         margin: 0 2.5pt !important;
       }
 
-      /* Resume Sections */
+      /* Sections & Titles */
       .resume-section {
-        margin-bottom: 7pt !important;
+        margin-bottom: 6pt !important;
         break-inside: auto !important;
         page-break-inside: auto !important;
       }
@@ -1404,7 +1440,7 @@
 
       .ats-section-title {
         color: #111827 !important;
-        font-size: 10pt !important;
+        font-size: 9.8pt !important;
         font-weight: 700 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.04em !important;
@@ -1415,7 +1451,7 @@
         display: none !important;
       }
 
-      /* Keywords with clean bolding */
+      /* Keywords */
       .ats-kw {
         background: none !important;
         border: none !important;
@@ -1429,34 +1465,34 @@
       .summary-box {
         background: #ffffff !important;
         border: 0.5pt solid #e5e7eb !important;
-        padding: 4.5pt 7pt !important;
-        font-size: 8.5pt !important;
-        line-height: 1.36 !important;
+        padding: 4pt 6pt !important;
+        font-size: 8.4pt !important;
+        line-height: 1.34 !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
 
-      /* Skills Section: Clean Multi-Row 2-Column Grid */
+      /* Technical Skills - Compact 2-Col Rows */
       .ats-skills-container {
         display: flex !important;
         flex-direction: column !important;
-        gap: 2.5pt !important;
+        gap: 2pt !important;
       }
 
       .ats-skill-row {
         display: grid !important;
-        grid-template-columns: 130pt 1fr !important;
-        gap: 6pt !important;
+        grid-template-columns: 125pt 1fr !important;
+        gap: 5pt !important;
         align-items: center !important;
         background: #ffffff !important;
         border: 0.5pt solid #e5e7eb !important;
-        padding: 3pt 6pt !important;
+        padding: 2.5pt 5pt !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
 
       .skill-cat-title {
-        font-size: 8.2pt !important;
+        font-size: 8pt !important;
         font-weight: 700 !important;
         color: #111827 !important;
       }
@@ -1464,51 +1500,47 @@
       .skill-tag-cloud {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 2pt 3pt !important;
+        gap: 2pt !important;
       }
 
       .skill-pill {
         background: #f8fafc !important;
         color: #1e293b !important;
         border: 0.5pt solid #cbd5e1 !important;
-        font-size: 7.5pt !important;
-        padding: 0.5pt 3pt !important;
-        line-height: 1.25 !important;
+        font-size: 7.4pt !important;
+        padding: 0.5pt 2.5pt !important;
+        line-height: 1.2 !important;
         border-radius: 2pt !important;
       }
 
-      /* Experience & Project Cards */
-      .experience-block,
-      .ats-project-card,
-      .paper-block,
-      .course-block {
+      /* Experience Block - ALLOWS BREAKING INTO PAGE 1 SO PAGE 1 IS FILLED */
+      .experience-block {
         background: #ffffff !important;
         border: 0.5pt solid #e5e7eb !important;
         box-shadow: none !important;
-        padding: 4.5pt 7pt !important;
+        padding: 4.5pt 6.5pt !important;
         margin-bottom: 4.5pt !important;
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
         transform: none !important;
       }
 
-      .entry-header,
-      .project-title-row {
+      .entry-header {
         display: flex !important;
         justify-content: space-between !important;
         align-items: baseline !important;
         margin-bottom: 2pt !important;
+        break-after: avoid !important;
+        page-break-after: avoid !important;
       }
 
-      .entry-role,
-      .project-name {
+      .entry-role {
         color: #111827 !important;
-        font-size: 9.3pt !important;
+        font-size: 9.2pt !important;
         font-weight: 700 !important;
       }
 
-      .entry-company,
-      .project-subhead {
+      .entry-company {
         color: #0284c7 !important;
         font-size: 8.2pt !important;
         font-weight: 600 !important;
@@ -1536,10 +1568,46 @@
         font-size: 8.2pt !important;
         line-height: 1.34 !important;
         margin-bottom: 1.5pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       }
 
       .ats-bullets li::before {
         color: #111827 !important;
+      }
+
+      /* Project Cards */
+      .ats-project-card,
+      .paper-block,
+      .course-block {
+        background: #ffffff !important;
+        border: 0.5pt solid #e5e7eb !important;
+        box-shadow: none !important;
+        padding: 4.5pt 6.5pt !important;
+        margin-bottom: 4.5pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        transform: none !important;
+      }
+
+      .project-title-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
+        margin-bottom: 1.5pt !important;
+      }
+
+      .project-name {
+        color: #111827 !important;
+        font-size: 9.2pt !important;
+        font-weight: 700 !important;
+      }
+
+      .project-subhead {
+        color: #0284c7 !important;
+        font-size: 8.2pt !important;
+        font-weight: 600 !important;
+        margin-bottom: 2pt !important;
       }
 
       .project-tech-bar {
@@ -1577,7 +1645,7 @@
         padding: 0 !important;
       }
 
-      /* Education Grid - 2 Columns in Print */
+      /* Education Grid - 2 Columns */
       .ats-education-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
@@ -1587,7 +1655,7 @@
       .ats-edu-card {
         background: #ffffff !important;
         border: 0.5pt solid #e5e7eb !important;
-        padding: 4pt 6pt !important;
+        padding: 3.5pt 5pt !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
       }
@@ -1930,6 +1998,25 @@
         scroll-margin-top: 3.5rem;
       }
     }
+  
+    /* Table Wrapper for Screen (transparent block layout) */
+    .print-page-table {
+      display: block;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .print-spacer-header,
+    .print-spacer-footer {
+      display: none;
+    }
+    .print-page-table tbody,
+    .print-page-table tr,
+    .print-content-cell {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+
   </style>
 </head>
 <body class="highlight-keywords">
@@ -2031,7 +2118,17 @@
     <!-- ===================================================================
          MAIN ATS RESUME DOCUMENT SHEET
          =================================================================== -->
-    <main class="resume-sheet" id="resumeDocument">
+    <table class="print-page-table">
+        <thead class="print-spacer-header">
+          <tr><td><div class="print-spacer-top"></div></td></tr>
+        </thead>
+        <tfoot class="print-spacer-footer">
+          <tr><td><div class="print-spacer-bottom"></div></td></tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td class="print-content-cell">
+              <main class="resume-sheet" id="resumeDocument">
 
       <!-- CANDIDATE ATS LETTERHEAD HEADER -->
       <header class="ats-header">
@@ -2623,6 +2720,10 @@
       </footer>
 
     </main>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
   </div>
 
