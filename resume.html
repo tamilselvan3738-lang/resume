@@ -1252,15 +1252,16 @@
         /* =====================================================================
        PRINT STYLESHEET - ZERO BROWSER HEADERS/FOOTERS & BALANCED ALIGNMENT
        ===================================================================== */
+        /* Clean PDF Page Setup - Balanced Equal Margins & Zero Slicing */
     @page {
       size: A4 portrait;
-      margin: 0mm !important; /* Completely eliminates date, title, and URL */
+      margin: 10mm 12mm 10mm 12mm !important;
     }
 
     @media print {
       @page {
         size: A4 portrait;
-        margin: 0mm !important;
+        margin: 10mm 12mm 10mm 12mm !important;
       }
 
       *, *::before, *::after {
@@ -1296,39 +1297,6 @@
         padding: 0 !important;
       }
 
-      /* Repeating Table Spacers - Equal 12mm Top & Bottom on EVERY Page */
-      .print-page-table {
-        display: table !important;
-        width: 100% !important;
-        border-collapse: collapse !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
-      .print-spacer-header {
-        display: table-header-group !important;
-      }
-
-      .print-spacer-footer {
-        display: table-footer-group !important;
-      }
-
-      .print-spacer-top {
-        height: 12mm !important; /* Top space on EVERY PAGE */
-        width: 100% !important;
-      }
-
-      .print-spacer-bottom {
-        height: 12mm !important; /* Bottom space on EVERY PAGE */
-        width: 100% !important;
-      }
-
-      .print-content-cell {
-        display: table-cell !important;
-        padding: 0 13mm !important; /* Left & Right space on EVERY PAGE */
-        vertical-align: top !important;
-      }
-
       .resume-sheet {
         box-shadow: none !important;
         border: none !important;
@@ -1351,7 +1319,7 @@
 
       .ats-name {
         color: #111827 !important;
-        font-size: 21pt !important;
+        font-size: 20pt !important;
         font-weight: 800 !important;
         letter-spacing: 0.04em !important;
         margin-bottom: 2pt !important;
@@ -1451,6 +1419,22 @@
         display: none !important;
       }
 
+      /* High-contrast solid text for all strong, bold, and bullet points */
+      body, p, li, span, div {
+        color: #111827 !important;
+      }
+
+      strong, b, .ats-bullets li strong, .summary-box strong {
+        color: #0f172a !important; /* CRITICAL: Pure solid dark slate/black - prevents washed-out white text */
+        font-weight: 700 !important;
+      }
+
+      .entry-company,
+      .project-subhead {
+        color: #0284c7 !important;
+        font-weight: 600 !important;
+      }
+
       /* Keywords */
       .ats-kw {
         background: none !important;
@@ -1513,7 +1497,7 @@
         border-radius: 2pt !important;
       }
 
-      /* Experience Block - ALLOWS BREAKING INTO PAGE 1 SO PAGE 1 IS FILLED */
+      /* Experience Block - Fills into Page 1 */
       .experience-block {
         background: #ffffff !important;
         border: 0.5pt solid #e5e7eb !important;
@@ -1522,7 +1506,6 @@
         margin-bottom: 4.5pt !important;
         break-inside: auto !important;
         page-break-inside: auto !important;
-        transform: none !important;
       }
 
       .entry-header {
@@ -1576,7 +1559,7 @@
         color: #111827 !important;
       }
 
-      /* Project Cards */
+      /* CRITICAL: Project cards NEVER slice across pages */
       .ats-project-card,
       .paper-block,
       .course-block {
@@ -1585,7 +1568,7 @@
         box-shadow: none !important;
         padding: 4.5pt 6.5pt !important;
         margin-bottom: 4.5pt !important;
-        break-inside: avoid !important;
+        break-inside: avoid !important; /* Forces the entire card to stay intact on one page */
         page-break-inside: avoid !important;
         transform: none !important;
       }
@@ -1595,6 +1578,8 @@
         justify-content: space-between !important;
         align-items: baseline !important;
         margin-bottom: 1.5pt !important;
+        break-after: avoid !important;
+        page-break-after: avoid !important;
       }
 
       .project-name {
@@ -1645,7 +1630,7 @@
         padding: 0 !important;
       }
 
-      /* Education Grid - 2 Columns */
+      /* Education Grid */
       .ats-education-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
@@ -2118,17 +2103,7 @@
     <!-- ===================================================================
          MAIN ATS RESUME DOCUMENT SHEET
          =================================================================== -->
-    <table class="print-page-table">
-        <thead class="print-spacer-header">
-          <tr><td><div class="print-spacer-top"></div></td></tr>
-        </thead>
-        <tfoot class="print-spacer-footer">
-          <tr><td><div class="print-spacer-bottom"></div></td></tr>
-        </tfoot>
-        <tbody>
-          <tr>
-            <td class="print-content-cell">
-              <main class="resume-sheet" id="resumeDocument">
+    <main class="resume-sheet" id="resumeDocument">
 
       <!-- CANDIDATE ATS LETTERHEAD HEADER -->
       <header class="ats-header">
@@ -2720,10 +2695,6 @@
       </footer>
 
     </main>
-            </td>
-          </tr>
-        </tbody>
-      </table>
 
   </div>
 
