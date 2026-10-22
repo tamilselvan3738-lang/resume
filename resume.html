@@ -1251,13 +1251,17 @@
        ===================================================================== */
     @page {
       size: A4 portrait;
-      margin: 0mm !important;
+      margin: 12mm 12mm 12mm 12mm !important; /* EXACT EQUAL 12mm MARGIN ON TOP, BOTTOM, LEFT, RIGHT FOR EVERY PAGE */
     }
 
     @media print {
       @page {
         size: A4 portrait;
-        margin: 0mm !important;
+        margin: 12mm 12mm 12mm 12mm !important; /* EXACT EQUAL 12mm ON EVERY SINGLE PAGE */
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box !important;
       }
 
       html, body {
@@ -1265,8 +1269,10 @@
         color: #111827 !important;
         margin: 0 !important;
         padding: 0 !important;
-        font-size: 9.3pt !important;
-        line-height: 1.45 !important;
+        min-height: auto !important;
+        height: auto !important;
+        font-size: 8.8pt !important;
+        line-height: 1.35 !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
@@ -1284,47 +1290,58 @@
         max-width: 100% !important;
         width: 100% !important;
         margin: 0 !important;
+        padding: 0 !important;
       }
 
       .resume-sheet {
         box-shadow: none !important;
         border: none !important;
-        padding: 12mm 16mm 14mm 16mm !important; /* Elegant document margin padding */
-        background: #ffffff !important;
-        margin: 0 auto !important;
+        padding: 0 !important; /* All equal margins governed strictly by @page (12mm all sides) */
+        margin: 0 !important;
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
+        background: #ffffff !important;
       }
 
       .resume-sheet::before {
         display: none !important;
       }
 
+      /* Candidate Header - Balanced & Centered */
+      .ats-header {
+        text-align: center !important;
+        margin-bottom: 4pt !important;
+      }
+
       .ats-name {
         color: #111827 !important;
-        font-size: 22pt !important;
+        font-size: 21pt !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.04em !important;
+        margin-bottom: 2pt !important;
       }
 
       .ats-title {
         color: #0284c7 !important;
-        font-size: 11.5pt !important;
+        font-size: 10.2pt !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.01em !important;
+        margin-bottom: 3.5pt !important;
       }
 
-      /* ATS Contact Bar in Print / PDF - Guaranteed Active Clickable Links */
       .ats-contact-bar {
         display: block !important;
         text-align: center !important;
         color: #374151 !important;
-        font-size: 8.6pt !important;
-        line-height: 1.7 !important;
-        margin-bottom: 8pt !important;
+        font-size: 8.2pt !important;
+        line-height: 1.6 !important;
+        margin-bottom: 6pt !important;
       }
 
       .ats-contact-item {
         display: inline-block !important;
         vertical-align: middle !important;
-        margin: 1.5pt 3.5pt !important;
+        margin: 1pt 3.5pt !important;
         text-decoration: none !important;
       }
 
@@ -1353,54 +1370,52 @@
         color: #0366d6 !important;
         font-weight: 600 !important;
         text-decoration: underline !important;
-        text-decoration-color: #0366d6 !important;
       }
 
       .ats-contact-item svg {
         display: inline-block !important;
         vertical-align: -2.5px !important;
-        width: 10pt !important;
-        height: 10pt !important;
+        width: 9.5pt !important;
+        height: 9.5pt !important;
         stroke: #0366d6 !important;
       }
 
       .ats-contact-sep {
         display: inline-block !important;
         color: #9ca3af !important;
-        margin: 0 3pt !important;
+        margin: 0 2.5pt !important;
       }
 
-      .project-ext-link {
-        display: inline-block !important;
-        font-size: 8pt !important;
-        color: #0366d6 !important;
-        text-decoration: underline !important;
-        margin-top: 3pt !important;
-        background: none !important;
-        border: none !important;
-        padding: 0 !important;
+      /* Resume Sections */
+      .resume-section {
+        margin-bottom: 7pt !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
       }
 
       .ats-section-header {
-        border-bottom: 1.5pt solid #111827 !important;
-        padding-bottom: 2pt !important;
-        margin-bottom: 6pt !important;
+        border-bottom: 1.2pt solid #111827 !important;
+        padding-bottom: 1.5pt !important;
+        margin-top: 5pt !important;
+        margin-bottom: 4pt !important;
+        break-after: avoid !important;
+        page-break-after: avoid !important;
       }
 
       .ats-section-title {
         color: #111827 !important;
-        font-size: 11pt !important;
+        font-size: 10pt !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
       }
 
-      .ats-section-title::before {
-        display: none !important;
-      }
-
+      .ats-section-title::before,
       .ats-section-tag {
         display: none !important;
       }
 
-      /* Keywords print with clean bolding */
+      /* Keywords with clean bolding */
       .ats-kw {
         background: none !important;
         border: none !important;
@@ -1410,70 +1425,212 @@
         box-shadow: none !important;
       }
 
-      .summary-box,
+      /* Summary Box */
+      .summary-box {
+        background: #ffffff !important;
+        border: 0.5pt solid #e5e7eb !important;
+        padding: 4.5pt 7pt !important;
+        font-size: 8.5pt !important;
+        line-height: 1.36 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      /* Skills Section: Clean Multi-Row 2-Column Grid */
+      .ats-skills-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5pt !important;
+      }
+
+      .ats-skill-row {
+        display: grid !important;
+        grid-template-columns: 130pt 1fr !important;
+        gap: 6pt !important;
+        align-items: center !important;
+        background: #ffffff !important;
+        border: 0.5pt solid #e5e7eb !important;
+        padding: 3pt 6pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .skill-cat-title {
+        font-size: 8.2pt !important;
+        font-weight: 700 !important;
+        color: #111827 !important;
+      }
+
+      .skill-tag-cloud {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 2pt 3pt !important;
+      }
+
+      .skill-pill {
+        background: #f8fafc !important;
+        color: #1e293b !important;
+        border: 0.5pt solid #cbd5e1 !important;
+        font-size: 7.5pt !important;
+        padding: 0.5pt 3pt !important;
+        line-height: 1.25 !important;
+        border-radius: 2pt !important;
+      }
+
+      /* Experience & Project Cards */
       .experience-block,
       .ats-project-card,
       .paper-block,
-      .course-block,
-      .ats-edu-card,
-      .curriculum-box,
-      .ats-skill-row {
+      .course-block {
         background: #ffffff !important;
-        border: 1pt solid #e5e7eb !important;
+        border: 0.5pt solid #e5e7eb !important;
         box-shadow: none !important;
-        padding: 6pt 8pt !important;
-        page-break-inside: avoid;
+        padding: 4.5pt 7pt !important;
+        margin-bottom: 4.5pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
         transform: none !important;
       }
 
+      .entry-header,
+      .project-title-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
+        margin-bottom: 2pt !important;
+      }
+
       .entry-role,
-      .project-name,
-      .edu-degree {
+      .project-name {
         color: #111827 !important;
-        font-size: 10.2pt !important;
+        font-size: 9.3pt !important;
+        font-weight: 700 !important;
       }
 
       .entry-company,
-      .project-subhead,
-      .edu-institution {
+      .project-subhead {
         color: #0284c7 !important;
-        font-size: 9pt !important;
+        font-size: 8.2pt !important;
+        font-weight: 600 !important;
+        margin-bottom: 2pt !important;
       }
 
       .entry-date-pill,
       .project-date,
       .edu-years {
         color: #4b5563 !important;
-        font-size: 8.2pt !important;
+        font-size: 7.8pt !important;
+        font-weight: 600 !important;
         border: none !important;
         background: none !important;
         padding: 0 !important;
       }
 
+      .ats-bullets {
+        margin: 2pt 0 2pt 0 !important;
+        padding-left: 11pt !important;
+      }
+
       .ats-bullets li {
         color: #374151 !important;
-        font-size: 8.8pt !important;
-        line-height: 1.4 !important;
+        font-size: 8.2pt !important;
+        line-height: 1.34 !important;
+        margin-bottom: 1.5pt !important;
       }
 
       .ats-bullets li::before {
         color: #111827 !important;
       }
 
-      .tech-token {
-        background: #f3f4f6 !important;
-        color: #1f2937 !important;
-        border: 0.5pt solid #d1d5db !important;
+      .project-tech-bar {
+        margin-top: 2.5pt !important;
         font-size: 7.5pt !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 2pt !important;
+        align-items: center !important;
+      }
+
+      .project-tech-label {
+        font-weight: 700 !important;
+        color: #111827 !important;
+        margin-right: 2pt !important;
+      }
+
+      .tech-token {
+        background: #f1f5f9 !important;
+        color: #1e2937 !important;
+        border: 0.5pt solid #cbd5e1 !important;
+        font-size: 7.2pt !important;
+        padding: 0.5pt 2.5pt !important;
+        border-radius: 2pt !important;
+      }
+
+      .project-ext-link {
+        display: inline-block !important;
+        font-size: 7.6pt !important;
+        color: #0366d6 !important;
+        text-decoration: underline !important;
+        margin-top: 2pt !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+      }
+
+      /* Education Grid - 2 Columns in Print */
+      .ats-education-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4pt !important;
+      }
+
+      .ats-edu-card {
+        background: #ffffff !important;
+        border: 0.5pt solid #e5e7eb !important;
+        padding: 4pt 6pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .edu-degree {
+        font-size: 8.5pt !important;
+        font-weight: 700 !important;
+        color: #111827 !important;
+      }
+
+      .edu-institution {
+        font-size: 7.8pt !important;
+        color: #0284c7 !important;
+      }
+
+      .edu-score-pill {
+        font-size: 7.4pt !important;
+        padding: 0.5pt 3pt !important;
+        border: 0.5pt solid #22c55e !important;
+        color: #166534 !important;
+        background: #f0fdf4 !important;
+        border-radius: 2pt !important;
+      }
+
+      /* Course Curriculum Grid */
+      .course-curriculum-list {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 3pt !important;
+        margin-top: 3pt !important;
+      }
+
+      .curriculum-box {
+        background: #ffffff !important;
+        border: 0.5pt solid #e5e7eb !important;
+        padding: 3pt 5pt !important;
+        font-size: 7.8pt !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       }
 
       .resume-footer {
         display: none !important;
-      }
-
-      .resume-section {
-        margin-bottom: 10pt !important;
-        page-break-inside: auto;
       }
     }
 
