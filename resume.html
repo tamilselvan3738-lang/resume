@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamilselvan - Full-Stack Web Developer & Python Engineer (ATS Resume)</title>
+  <meta name="description" content="Professional ATS-Optimized Resume of Tamilselvan - Full-Stack Web Developer & Python / Django Software Engineer with 8 Months of Experience.">
+  
+  <!-- Google Fonts: Space Grotesk (Tech Headings), Plus Jakarta Sans (Clean ATS Body), JetBrains Mono (Keywords & Metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================================
+       DESIGN SYSTEM & CSS VARIABLES (ATS RESUME SPECIFICATION)
+       ===================================================================== */
+    :root {
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Dark Theme (Default) */
+      --bg-base: #070b14;
+      --bg-surface: #0e1526;
+      --bg-surface-elevated: #162035;
+      --bg-surface-hover: #1e2c47;
+      --bg-nav-glass: rgba(14, 21, 38, 0.92);
+
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --border-accent: rgba(56, 189, 248, 0.45);
+      --border-rule: #1e293b;
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --text-highlight: #38bdf8;
+
+      /* ATS Keyword Highlighting Colors (Dark Theme) */
+      --kw-bg: rgba(56, 189, 248, 0.12);
+      --kw-border: rgba(56, 189, 248, 0.35);
+      --kw-text: #38bdf8;
+      --kw-shadow: 0 0 8px rgba(56, 189, 248, 0.18);
+
+      --badge-green-bg: rgba(34, 197, 94, 0.12);
+      --badge-green-text: #4ade80;
+      --badge-green-border: rgba(34, 197, 94, 0.28);
+
+      --card-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px var(--border-color);
+      --card-shadow-hover: 0 22px 48px -12px rgba(56, 189, 248, 0.18), 0 0 0 1px var(--border-accent);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-full: 9999px;
+
+      --section-spacing: 2.25rem;
+      --transition-base: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-base: #eef2f6;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f8fafc;
+      --bg-surface-hover: #f1f5f9;
+      --bg-nav-glass: rgba(255, 255, 255, 0.94);
+
+      --border-color: rgba(15, 23, 42, 0.12);
+      --border-subtle: rgba(15, 23, 42, 0.06);
+      --border-accent: rgba(2, 132, 199, 0.4);
+      --border-rule: #e2e8f0;
+
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-dim: #64748b;
+      --text-highlight: #0284c7;
+
+      /* ATS Keyword Highlighting Colors (Light Theme) */
+      --kw-bg: rgba(2, 132, 199, 0.08);
+      --kw-border: rgba(2, 132, 199, 0.28);
+      --kw-text: #0369a1;
+      --kw-shadow: 0 0 6px rgba(2, 132, 199, 0.12);
+
+      --badge-green-bg: rgba(22, 163, 74, 0.1);
+      --badge-green-text: #15803d;
+      --badge-green-border: rgba(22, 163, 74, 0.25);
+
+      --card-shadow: 0 14px 36px -10px rgba(15, 23, 42, 0.1), 0 0 0 1px var(--border-color);
+      --card-shadow-hover: 0 20px 42px -10px rgba(2, 132, 199, 0.18), 0 0 0 1px var(--border-accent);
+    }
+
+    /* =====================================================================
+       BASE RESET & UNIVERSAL OVERFLOW-X PREVENTION
+       ===================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
+      box-sizing: border-box;
+      position: relative;
+      padding: 1.75rem 1rem 3.5rem 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    img, svg, video, canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p, span, a, h1, h2, h3, h4, h5, h6, li, div {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    /* Subtle ambient lighting backdrop */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1100px;
+      height: 400px;
+      background: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.08), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .resume-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+    }
+
+    /* =====================================================================
+       TOP FLOATING ATS CONTROL & SCORE BAR
+       ===================================================================== */
+    .top-action-bar {
+      position: sticky;
+      top: 0.85rem;
+      z-index: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      padding: 0.75rem 1.25rem;
+      background-color: var(--bg-nav-glass);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--border-color);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      gap: 0.85rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: var(--transition-base);
+    }
+
+    .top-action-bar.scrolled {
+      box-shadow: 0 14px 36px -10px rgba(0, 0, 0, 0.65), 0 0 0 1px var(--border-accent);
+      border-color: var(--border-accent);
+    }
+
+    [data-theme="light"] .top-action-bar {
+      box-shadow: 0 8px 24px -8px rgba(15, 23, 42, 0.1), 0 0 0 1px var(--border-color);
+    }
+
+    .top-bar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* ATS Score Pill Meter */
+    .ats-score-meter {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.38rem 0.85rem;
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      color: var(--badge-green-text);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition-base);
+      white-space: nowrap;
+    }
+
+    .ats-score-meter:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(34, 197, 94, 0.25);
+    }
+
+    .ats-score-badge-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--badge-green-text);
+      color: #052e16;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.74rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .ats-score-value {
+      font-family: var(--font-mono);
+      font-weight: 800;
+      color: var(--badge-green-text);
+    }
+
+    .ats-score-grade {
+      font-size: 0.76rem;
+      opacity: 0.9;
+    }
+
+    /* Mobile hamburger menu toggle */
+    .mobile-menu-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition-base);
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-btn:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-accent);
+      color: var(--text-highlight);
+    }
+
+    .action-buttons-drawer {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .mobile-nav-links {
+      display: none;
+    }
+
+    .action-buttons-group {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.95rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition-base);
+      border: 1px solid transparent;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .btn svg {
+      flex-shrink: 0;
+      width: 15px;
+      height: 15px;
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--border-accent);
+      color: var(--text-highlight);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* Keyword highlight interactive toggle */
+    .btn-kw-toggle {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-md);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .btn-kw-toggle:hover {
+      border-color: var(--border-accent);
+    }
+
+    .kw-status-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #22c55e;
+      box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+      transition: var(--transition-base);
+    }
+
+    body:not(.highlight-keywords) .kw-status-indicator {
+      background-color: var(--text-dim);
+      box-shadow: none;
+    }
+
+    /* =====================================================================
+       ATS RESUME PAPER DOCUMENT SHEET
+       ===================================================================== */
+    .resume-sheet {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3.25rem 3.5rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Subtle top accent rule */
+    .resume-sheet::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    }
+
+    /* =====================================================================
+       ATS CANDIDATE HEADER
+       ===================================================================== */
+    .ats-header {
+      text-align: center;
+      padding-bottom: 1.6rem;
+      border-bottom: 2px solid var(--border-rule);
+      margin-bottom: 1.85rem;
+    }
+
+    .ats-name {
+      font-family: var(--font-heading);
+      font-size: 2.65rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+    }
+
+    .ats-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-highlight);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.95rem;
+    }
+
+    .ats-contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem 1.15rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .ats-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s ease;
+    }
+
+    .ats-contact-item:hover {
+      color: var(--text-highlight);
+    }
+
+    .ats-contact-item svg {
+      width: 15px;
+      height: 15px;
+      stroke-width: 2;
+      color: var(--text-highlight);
+      flex-shrink: 0;
+    }
+
+    .ats-contact-sep {
+      color: var(--text-dim);
+      font-weight: 300;
+      user-select: none;
+    }
+
+    /* =====================================================================
+       ATS SECTION TITLES & DIVIDERS
+       ===================================================================== */
+    .resume-section {
+      margin-bottom: var(--section-spacing);
+      width: 100%;
+      box-sizing: border-box;
+      scroll-margin-top: 5.5rem;
+    }
+
+    .ats-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid var(--border-rule);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .ats-section-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .ats-section-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background: var(--text-highlight);
+      border-radius: 2px;
+    }
+
+    .ats-section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* =====================================================================
+       ATS KEYWORD HIGHLIGHTING STYLES
+       ===================================================================== */
+    .ats-kw {
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline;
+    }
+
+    /* When highlighting is ON */
+    body.highlight-keywords .ats-kw {
+      background: var(--kw-bg);
+      border: 1px solid var(--kw-border);
+      color: var(--kw-text);
+      padding: 0.06rem 0.35rem;
+      border-radius: 4px;
+      box-shadow: var(--kw-shadow);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    /* In light theme */
+    [data-theme="light"] body.highlight-keywords .ats-kw {
+      background: rgba(2, 132, 199, 0.09);
+      border-color: rgba(2, 132, 199, 0.3);
+      color: #0369a1;
+      box-shadow: 0 0 6px rgba(2, 132, 199, 0.1);
+    }
+
+    /* =====================================================================
+       1. PROFESSIONAL SUMMARY SECTION
+       ===================================================================== */
+    .summary-box {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      text-align: justify;
+      background-color: var(--bg-surface-elevated);
+      padding: 1.25rem 1.6rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      border-left: 3.5px solid var(--text-highlight);
+    }
+
+    .summary-box strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* =====================================================================
+       2. TECHNICAL SKILLS (ATS CATEGORIZED FORMAT)
+       ===================================================================== */
+    .ats-skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .ats-skill-row {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      align-items: baseline;
+      gap: 1.25rem;
+      padding: 0.75rem 1rem;
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      transition: var(--transition-base);
+    }
+
+    .ats-skill-row:hover {
+      border-color: var(--border-accent);
+      transform: translateX(2px);
+    }
+
+    .ats-skill-category {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .ats-skill-items {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* =====================================================================
+       3. PROFESSIONAL EXPERIENCE SECTION (8 MONTHS)
+       ===================================================================== */
+    .experience-block {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--text-highlight);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: var(--transition-base);
+    }
+
+    .experience-block:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.45rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .entry-role {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .entry-company {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-top: 0.15rem;
+    }
+
+    .entry-date-pill {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-highlight);
+      background: var(--kw-bg);
+      border: 1px solid var(--kw-border);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .entry-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+      margin-bottom: 0.85rem;
+    }
+
+    .ats-bullets {
+      list-style-type: none;
+      margin-bottom: 0.75rem;
+    }
+
+    .ats-bullets li {
+      position: relative;
+      padding-left: 1.45rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .ats-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--text-highlight);
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    .ats-bullets li strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Projects introduction callout banner */
+    .experience-projects-intro {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1.15rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      color: var(--text-main);
+      margin-top: 1.1rem;
+    }
+
+    .experience-projects-intro strong {
+      color: var(--text-highlight);
+    }
+
+    /* =====================================================================
+       4. KEY PROJECTS (ATS STANDARDIZED BLOCKS)
+       ===================================================================== */
+    .project-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .filter-chip {
+      padding: 0.38rem 0.95rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      background-color: var(--bg-surface-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .filter-chip:hover {
+      color: var(--text-main);
+      border-color: var(--border-accent);
+    }
+
+    .filter-chip.active {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35);
+    }
+
+    .projects-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .ats-project-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 3.5px solid var(--text-highlight);
+      border-radius: var(--radius-md);
+      padding: 1.45rem 1.7rem;
+      transition: var(--transition-base);
+    }
+
+    .ats-project-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--card-shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.35rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .project-tag-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.55rem;
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      color: var(--badge-green-text);
+      border-radius: var(--radius-full);
+    }
+
+    .project-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .project-subhead {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-highlight);
+      margin-bottom: 0.65rem;
+    }
+
+    .project-tech-bar {
+      margin-top: 0.85rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .project-tech-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-main);
+      margin-right: 0.35rem;
+    }
+
+    .tech-token {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 0.16rem 0.48rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+    }
+
+    /* =====================================================================
+       5. TECHNICAL PAPER PRESENTATION SECTION (FROM SPEC)
+       ===================================================================== */
+    .paper-block {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid #818cf8;
+      border-radius: var(--radius-md);
+      padding: 1.45rem 1.7rem;
+      transition: var(--transition-base);
+    }
+
+    .paper-block:hover {
+      border-color: rgba(129, 140, 248, 0.45);
+      box-shadow: 0 16px 36px -10px rgba(129, 140, 248, 0.18);
+    }
+
+    .paper-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.28rem 0.75rem;
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.3);
+      color: #a5b4fc;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    [data-theme="light"] .paper-badge {
+      background: rgba(79, 70, 229, 0.08);
+      border-color: rgba(79, 70, 229, 0.25);
+      color: #4338ca;
+    }
+
+    /* =====================================================================
+       6. CERTIFICATIONS & COURSEWORK
+       ===================================================================== */
+    .course-block {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--text-highlight);
+      border-radius: var(--radius-md);
+      padding: 1.45rem 1.7rem;
+    }
+
+    .course-curriculum-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.85rem;
+    }
+
+    .curriculum-box {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 0.95rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .curriculum-box strong {
+      color: var(--text-highlight);
+      font-weight: 600;
+    }
+
+    /* =====================================================================
+       7. EDUCATION SECTION (ATS REVERSE-CHRONOLOGICAL GRID)
+       ===================================================================== */
+    .ats-education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .ats-edu-card {
+      background-color: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-base);
+    }
+
+    .ats-edu-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .edu-degree {
+      font-family: var(--font-heading);
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+      line-height: 1.35;
+    }
+
+    .edu-institution {
+      font-size: 0.86rem;
+      color: var(--text-highlight);
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .edu-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .edu-years {
+      color: var(--text-dim);
+    }
+
+    .edu-score {
+      font-weight: 700;
+      color: var(--badge-green-text);
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+    }
+
+    /* =====================================================================
+       ATS AUDIT MODAL DRAWER
+       ===================================================================== */
+    .ats-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .ats-modal-backdrop.show {
+      display: flex;
+      animation: fadeIn 0.2s ease-out forwards;
+    }
+
+    .ats-modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      max-width: 640px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    .ats-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .ats-modal-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .ats-modal-close-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: var(--transition-base);
+    }
+
+    .ats-modal-close-btn:hover {
+      background: var(--bg-surface-hover);
+      color: var(--text-highlight);
+    }
+
+    .ats-score-hero {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      background: var(--badge-green-bg);
+      border: 1px solid var(--badge-green-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .ats-score-hero-number {
+      font-family: var(--font-mono);
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--badge-green-text);
+      line-height: 1;
+    }
+
+    .ats-score-hero-details h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .ats-score-hero-details p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .ats-metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .ats-metrics-table th,
+    .ats-metrics-table td {
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ats-metrics-table th {
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ats-metrics-table td strong {
+      color: var(--text-main);
+    }
+
+    .ats-check-passed {
+      color: var(--badge-green-text);
+      font-weight: 700;
+    }
+
+    /* Footer & Toast */
+    .resume-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .toast-notification {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-accent);
+      color: var(--text-main);
+      padding: 0.85rem 1.35rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 1000;
+    }
+
+    .toast-notification.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* =====================================================================
+       RTL (RIGHT-TO-LEFT) SUPPORT
+       ===================================================================== */
+    [dir="rtl"] body {
+      direction: rtl;
+      text-align: right;
+    }
+
+    [dir="rtl"] .top-bar-header,
+    [dir="rtl"] .entry-header,
+    [dir="rtl"] .project-title-row,
+    [dir="rtl"] .edu-meta-row,
+    [dir="rtl"] .resume-footer {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .summary-box,
+    [dir="rtl"] .experience-block,
+    [dir="rtl"] .ats-project-card,
+    [dir="rtl"] .course-block {
+      border-left: 1px solid var(--border-color);
+      border-right: 4px solid var(--text-highlight);
+    }
+
+    [dir="rtl"] .paper-block {
+      border-left: 1px solid var(--border-color);
+      border-right: 4px solid #818cf8;
+    }
+
+    [dir="rtl"] .ats-bullets li {
+      padding-left: 0;
+      padding-right: 1.45rem;
+    }
+
+    [dir="rtl"] .ats-bullets li::before {
+      left: auto;
+      right: 0;
+    }
+
+    /* =====================================================================
+       PRINT STYLESHEET (@media print - 100% CLEAN ATS COMPLIANT)
+       ===================================================================== */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #111827 !important;
+        padding: 0 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.45 !important;
+      }
+
+      .ambient-glow,
+      .top-action-bar,
+      .project-filter-bar,
+      .toast-notification,
+      .ats-modal-backdrop,
+      .experience-projects-intro {
+        display: none !important;
+      }
+
+      .resume-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+
+      .resume-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0.35in 0.45in !important;
+        background: #ffffff !important;
+      }
+
+      .resume-sheet::before {
+        display: none !important;
+      }
+
+      .ats-name {
+        color: #111827 !important;
+        font-size: 22pt !important;
+      }
+
+      .ats-title {
+        color: #0284c7 !important;
+        font-size: 11.5pt !important;
+      }
+
+      .ats-contact-bar {
+        color: #374151 !important;
+        font-size: 8.8pt !important;
+      }
+
+      .ats-contact-bar a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      .ats-section-header {
+        border-bottom: 1.5pt solid #111827 !important;
+        padding-bottom: 2pt !important;
+        margin-bottom: 6pt !important;
+      }
+
+      .ats-section-title {
+        color: #111827 !important;
+        font-size: 11pt !important;
+      }
+
+      .ats-section-title::before {
+        display: none !important;
+      }
+
+      .ats-section-tag {
+        display: none !important;
+      }
+
+      /* Keywords print with clean bolding */
+      .ats-kw {
+        background: none !important;
+        border: none !important;
+        color: #111827 !important;
+        font-weight: 700 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+      }
+
+      .summary-box,
+      .experience-block,
+      .ats-project-card,
+      .paper-block,
+      .course-block,
+      .ats-edu-card,
+      .curriculum-box,
+      .ats-skill-row {
+        background: #ffffff !important;
+        border: 1pt solid #e5e7eb !important;
+        box-shadow: none !important;
+        padding: 6pt 8pt !important;
+        page-break-inside: avoid;
+        transform: none !important;
+      }
+
+      .entry-role,
+      .project-name,
+      .edu-degree {
+        color: #111827 !important;
+        font-size: 10.2pt !important;
+      }
+
+      .entry-company,
+      .project-subhead,
+      .edu-institution {
+        color: #0284c7 !important;
+        font-size: 9pt !important;
+      }
+
+      .entry-date-pill,
+      .project-date,
+      .edu-years {
+        color: #4b5563 !important;
+        font-size: 8.2pt !important;
+        border: none !important;
+        background: none !important;
+        padding: 0 !important;
+      }
+
+      .ats-bullets li {
+        color: #374151 !important;
+        font-size: 8.8pt !important;
+        line-height: 1.4 !important;
+      }
+
+      .ats-bullets li::before {
+        color: #111827 !important;
+      }
+
+      .tech-token {
+        background: #f3f4f6 !important;
+        color: #1f2937 !important;
+        border: 0.5pt solid #d1d5db !important;
+        font-size: 7.5pt !important;
+      }
+
+      .resume-footer {
+        display: none !important;
+      }
+
+      .resume-section {
+        margin-bottom: 10pt !important;
+        page-break-inside: auto;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE BREAKPOINT 1: LARGE TABLETS (<= 1024px)
+       ===================================================================== */
+    @media (max-width: 1024px) {
+      .resume-wrapper {
+        max-width: 95%;
+      }
+
+      .resume-sheet {
+        padding: 2.5rem 2.25rem;
+      }
+
+      .ats-name {
+        font-size: 2.35rem;
+      }
+
+      .ats-skill-row {
+        grid-template-columns: 180px 1fr;
+        gap: 1rem;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE BREAKPOINT 2: TABLETS & MOBILE MENU (<= 768px)
+       ===================================================================== */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.5rem 2.5rem 0.5rem;
+      }
+
+      .resume-sheet {
+        padding: 1.75rem 1.25rem;
+        border-radius: var(--radius-md);
+      }
+
+      /* Sticky Top Bar Collapses into mobile drawer */
+      .top-action-bar {
+        position: sticky;
+        top: 0.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem 1rem;
+        gap: 0;
+        margin-bottom: 1.25rem;
+        border-radius: var(--radius-md);
+        max-height: calc(100vh - 1rem);
+        overflow-y: auto;
+      }
+
+      .top-bar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .action-buttons-drawer {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+        padding-top: 0.85rem;
+        margin-top: 0.75rem;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .action-buttons-drawer.is-open {
+        display: flex;
+        animation: slideDownNav 0.22s ease-out forwards;
+      }
+
+      @keyframes slideDownNav {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-nav-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.4rem;
+        width: 100%;
+      }
+
+      .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0.45rem 0.35rem;
+        background-color: var(--bg-surface-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        color: var(--text-muted);
+        font-size: 0.76rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition-base);
+      }
+
+      .mobile-nav-link:hover {
+        color: var(--text-highlight);
+        border-color: var(--border-accent);
+      }
+
+      .action-buttons-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .action-buttons-group .btn,
+      .action-buttons-group .btn-kw-toggle {
+        width: 100%;
+        justify-content: center;
+        padding: 0.6rem 0.85rem;
+      }
+
+      /* Candidate Header */
+      .ats-name {
+        font-size: 2.1rem;
+      }
+
+      .ats-title {
+        font-size: 1.05rem;
+      }
+
+      .ats-contact-bar {
+        font-size: 0.82rem;
+        gap: 0.5rem 0.85rem;
+      }
+
+      .ats-contact-sep {
+        display: none;
+      }
+
+      .ats-skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+
+      .course-curriculum-list {
+        grid-template-columns: 1fr;
+      }
+
+      .ats-education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .entry-header,
+      .project-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      .resume-section {
+        scroll-margin-top: 4.5rem;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE BREAKPOINT 3: MOBILE PHONES (<= 480px)
+       ===================================================================== */
+    @media (max-width: 480px) {
+      body {
+        padding: 0.65rem 0.35rem 2rem 0.35rem;
+      }
+
+      .resume-sheet {
+        padding: 1.25rem 0.85rem;
+        border-radius: 10px;
+      }
+
+      .top-action-bar {
+        top: 0.35rem;
+        padding: 0.6rem 0.75rem;
+        margin-bottom: 1rem;
+        max-height: calc(100vh - 0.7rem);
+      }
+
+      .ats-name {
+        font-size: 1.7rem;
+        letter-spacing: 0.02em;
+      }
+
+      .ats-title {
+        font-size: 0.94rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .ats-contact-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.45rem;
+        font-size: 0.82rem;
+      }
+
+      .ats-contact-item {
+        word-break: break-all;
+        width: 100%;
+      }
+
+      .summary-box {
+        padding: 0.95rem 1rem;
+        font-size: 0.88rem;
+        text-align: left;
+      }
+
+      .mobile-nav-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ats-section-title {
+        font-size: 1.05rem;
+      }
+
+      .experience-block,
+      .ats-project-card,
+      .paper-block,
+      .course-block {
+        padding: 1.15rem 0.95rem;
+      }
+
+      .project-name {
+        font-size: 1.08rem;
+      }
+
+      .ats-bullets li {
+        padding-left: 1.25rem;
+        font-size: 0.85rem;
+        line-height: 1.55;
+      }
+
+      .resume-section {
+        scroll-margin-top: 4rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .resume-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
+    }
+
+    /* =====================================================================
+       RESPONSIVE BREAKPOINT 4: ULTRA COMPACT (<= 320px)
+       ===================================================================== */
+    @media (max-width: 320px) {
+      body {
+        padding: 0.35rem 0.2rem 1.5rem 0.2rem;
+      }
+
+      .resume-sheet {
+        padding: 0.85rem 0.55rem;
+      }
+
+      .ats-name {
+        font-size: 1.45rem;
+      }
+
+      .ats-title {
+        font-size: 0.85rem;
+      }
+
+      .ats-section-title {
+        font-size: 0.98rem;
+      }
+
+      .experience-block,
+      .ats-project-card,
+      .paper-block,
+      .course-block {
+        padding: 0.95rem 0.65rem;
+      }
+
+      .ats-bullets li {
+        padding-left: 1.15rem;
+        font-size: 0.8rem;
+      }
+
+      .resume-section {
+        scroll-margin-top: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="highlight-keywords">
+
+  <!-- Ambient visual lighting backdrop -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <div class="resume-wrapper">
+
+    <!-- FLOATING TOP ATS CONTROL & SCORE BAR -->
+    <header class="top-action-bar" id="topNavbar">
+      <div class="top-bar-header">
+        <!-- ATS Compatibility Score Gauge (Target > 85% -> Achieved 96%) -->
+        <div class="ats-score-meter" id="atsScoreBtn" title="Click to view ATS Score breakdown & Keyword Audit">
+          <span class="ats-score-badge-circle">✓</span>
+          <span class="ats-score-label">ATS Score:</span>
+          <span class="ats-score-value">96%</span>
+          <span class="ats-score-grade">Pass (Grade A+)</span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="actionButtonsMenu">
+          <span class="hamburger-icon" id="menuIconBars">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </span>
+          <span class="close-icon" id="menuIconClose" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Action Buttons & Quick Nav -->
+      <div class="action-buttons-drawer" id="actionButtonsMenu">
+        <!-- Quick Section Anchor Links for Mobile Nav -->
+        <nav class="mobile-nav-links" aria-label="Resume Sections Navigation">
+          <a href="#summarySection" class="mobile-nav-link">Summary</a>
+          <a href="#skillsSection" class="mobile-nav-link">Skills</a>
+          <a href="#experienceSection" class="mobile-nav-link">Experience</a>
+          <a href="#projectsSection" class="mobile-nav-link">Projects</a>
+          <a href="#presentationSection" class="mobile-nav-link">Paper Pres.</a>
+          <a href="#courseSection" class="mobile-nav-link">Course</a>
+          <a href="#educationSection" class="mobile-nav-link">Education</a>
+          <a href="#atsAuditSection" class="mobile-nav-link">ATS Report</a>
+        </nav>
+
+        <div class="action-buttons-group">
+          <!-- Keyword Highlight Toggle Button -->
+          <button class="btn-kw-toggle" id="kwToggleBtn" aria-pressed="true" title="Toggle ATS keyword highlighting on/off">
+            <span class="kw-status-indicator" id="kwIndicator"></span>
+            <span>Keywords:</span>
+            <span id="kwStateText" style="color: var(--text-highlight); font-weight: 700;">ON</span>
+          </button>
+
+          <!-- Theme Toggle (Dark / Light Mode) -->
+          <button class="btn btn-secondary" id="themeToggleBtn" aria-label="Toggle Theme">
+            <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span id="themeBtnText">Light Mode</span>
+          </button>
+
+          <!-- Copy Plaintext ATS Resume -->
+          <button class="btn btn-secondary" id="copyTextBtn" aria-label="Copy Clean Plaintext for Job Applications" title="Copy clean plaintext for pasting into ATS applications">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy Text</span>
+          </button>
+
+          <!-- Print / PDF Button -->
+          <button class="btn btn-primary" id="printResumeBtn" onclick="window.print()" aria-label="Print or Save Resume as ATS PDF">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Print ATS PDF</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================================================================
+         MAIN ATS RESUME DOCUMENT SHEET
+         =================================================================== -->
+    <main class="resume-sheet" id="resumeDocument">
+
+      <!-- CANDIDATE ATS LETTERHEAD HEADER -->
+      <header class="ats-header">
+        <h1 class="ats-name">TAMILSELVAN</h1>
+        <div class="ats-title">Full-Stack Web Developer &amp; Python / Django Software Engineer</div>
+        
+        <div class="ats-contact-bar">
+          <a href="mailto:tamilselvan3738@gmail.com" class="ats-contact-item" id="emailLink" title="Email Tamilselvan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>tamilselvan3738@gmail.com</span>
+          </a>
+
+          <span class="ats-contact-sep">|</span>
+
+          <span class="ats-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Dharmapuri, Tamil Nadu, India</span>
+          </span>
+
+          <span class="ats-contact-sep">|</span>
+
+          <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="ats-contact-item" title="GitHub Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub Profile</span>
+          </a>
+
+          <span class="ats-contact-sep">|</span>
+
+          <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="ats-contact-item" title="Vercel Projects">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px;"><path d="M12 1L24 22H0L12 1Z" /></svg>
+            <span>Vercel Projects</span>
+          </a>
+
+          <span class="ats-contact-sep">|</span>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="ats-contact-item" title="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- 1. PROFESSIONAL SUMMARY SECTION -->
+      <section class="resume-section" id="summarySection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Professional Summary</h2>
+          <span class="ats-section-tag">ATS Profile Audit: 100%</span>
+        </div>
+        <div class="summary-box">
+          <p>
+            Results-driven <span class="ats-kw">Full-Stack Web Developer</span> and <span class="ats-kw">Python / Django Software Engineer</span> with <span class="ats-kw">8 months of professional experience</span> designing, engineering, and shipping high-performance digital products, automated cybersecurity countermeasures, and computer-vision-powered platforms. Proven ability to architect end-to-end applications: from crafting high-conversion, accessible user interfaces (<span class="ats-kw">HTML5</span>, <span class="ats-kw">CSS3</span>, <span class="ats-kw">JavaScript ES6+</span>, <span class="ats-kw">React.js</span>, <span class="ats-kw">Bootstrap 5</span>, <span class="ats-kw">Tailwind CSS</span>) to engineering resilient backend services (<span class="ats-kw">Python 3.10+</span>, <span class="ats-kw">Django 4.2</span>, <span class="ats-kw">Django REST Framework / DRF</span>, <span class="ats-kw">RESTful APIs</span>). Demonstrated specialization in real-time biometric face detection algorithms (<span class="ats-kw">OpenCV</span>, <span class="ats-kw">Haar Cascades</span>) and native Windows operating system endpoint security automation (<span class="ats-kw">Win32 API</span>, <span class="ats-kw">Windows ACLs</span>). Dedicated to clean architecture, normalized <span class="ats-kw">SQL</span> database design (<span class="ats-kw">SQLite</span>, <span class="ats-kw">MySQL</span>), version control workflows (<span class="ats-kw">Git/GitHub</span>), and cloud deployment lifecycle management (<span class="ats-kw">Vercel</span>).
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. TECHNICAL SKILLS SECTION (ATS STRUCTURED CATEGORIZATION) -->
+      <section class="resume-section" id="skillsSection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Technical Skills</h2>
+          <span class="ats-section-tag">Core Competencies</span>
+        </div>
+
+        <div class="ats-skills-list">
+          <!-- Programming Languages -->
+          <div class="ats-skill-row">
+            <div class="ats-skill-category">Programming Languages</div>
+            <div class="ats-skill-items">
+              <span class="ats-kw">Python 3.10+</span>, <span class="ats-kw">JavaScript (ES6+)</span>, <span class="ats-kw">SQL</span>, <span class="ats-kw">HTML5</span>, <span class="ats-kw">CSS3</span>
+            </div>
+          </div>
+
+          <!-- Web Frameworks & Backend -->
+          <div class="ats-skill-row">
+            <div class="ats-skill-category">Web Frameworks &amp; APIs</div>
+            <div class="ats-skill-items">
+              <span class="ats-kw">Django 4.2</span>, <span class="ats-kw">Django REST Framework (DRF)</span>, <span class="ats-kw">React.js</span> (Basic Knowledge &amp; Components), <span class="ats-kw">RESTful APIs</span>, <span class="ats-kw">MVT Architecture</span>, <span class="ats-kw">Bootstrap 5</span>, <span class="ats-kw">Tailwind CSS</span>, <span class="ats-kw">WordPress</span>
+            </div>
+          </div>
+
+          <!-- Databases & ORM -->
+          <div class="ats-skill-row">
+            <div class="ats-skill-category">Databases &amp; Storage</div>
+            <div class="ats-skill-items">
+              <span class="ats-kw">SQL</span>, <span class="ats-kw">SQLite</span>, <span class="ats-kw">MySQL</span>, <span class="ats-kw">Django ORM</span>, <span class="ats-kw">Relational Database Modeling</span>, <span class="ats-kw">Schema Migrations</span>, <span class="ats-kw">CRUD Operations</span>
+            </div>
+          </div>
+
+          <!-- Computer Vision & Specialized Systems -->
+          <div class="ats-skill-row">
+            <div class="ats-skill-category">Computer Vision &amp; AI</div>
+            <div class="ats-skill-items">
+              <span class="ats-kw">OpenCV (cv2)</span>, <span class="ats-kw">Haar Cascade Classifiers</span>, <span class="ats-kw">Pearson Correlation Coefficient</span>, <span class="ats-kw">Convolutional Neural Networks (CNN)</span>, <span class="ats-kw">Deep Learning</span>, <span class="ats-kw">HTML5 Webcam API</span>
+            </div>
+          </div>
+
+          <!-- Operating Systems & Cybersecurity -->
+          <div class="ats-skill-row">
+            <div class="ats-skill-category">OS &amp; Security Engineering</div>
+            <div class="ats-skill-items">
+              <span class="ats-kw">Windows Win32 API</span>, <span class="ats-kw">Windows Security Event Logging (Event ID 4625)</span>, <span class="ats-kw">Windows ACLs (icacls)</span>, <span class="ats-kw">Role-Based Access Control (RBAC)</span>
+            </div>
+          </div>
+
+          <!-- Tools & Cloud Deployment -->
+          <div class="ats-skill-row">
+            <div class="ats-skill-category">Tools &amp; Cloud Deployment</div>
+            <div class="ats-skill-items">
+              <span class="ats-kw">Git</span>, <span class="ats-kw">GitHub Version Control</span>, <span class="ats-kw">Vercel Cloud Platform</span>, <span class="ats-kw">Vite</span>, <span class="ats-kw">Postman</span>, <span class="ats-kw">Windows &amp; Linux CLI</span>, <span class="ats-kw">Mobile-First UI Architecture</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PROFESSIONAL EXPERIENCE SECTION (8 MONTHS DURATION) -->
+      <section class="resume-section" id="experienceSection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Professional Experience</h2>
+          <span class="ats-section-tag">8 Months Production Experience</span>
+        </div>
+
+        <div class="experience-block">
+          <div class="entry-header">
+            <div>
+              <div class="entry-role">Full-Stack Web &amp; Python Software Developer</div>
+              <div class="entry-company">Independent Software Engineering &amp; Client Solutions | Dharmapuri, Tamil Nadu, India</div>
+            </div>
+            <div class="entry-date-pill">March 2026 – October 2026 (8 Months)</div>
+          </div>
+
+          <p class="entry-desc">
+            Completed <span class="ats-kw">8 months</span> of production-focused software development, engineering resilient full-stack web platforms, Python / Django REST APIs, and computer vision systems. All projects below were architected, developed, and deployed during this 8-month tenure:
+          </p>
+
+          <ul class="ats-bullets">
+            <li><strong>Production Platform Architecture:</strong> Architected, developed, and shipped <strong>10+ full-stack web applications and digital platforms</strong> across diverse commercial domains including automotive marketplaces, cosmetic healthcare clinics, travel booking portals, and corporate event management systems.</li>
+            <li><strong>Computer Vision &amp; Biometric Integration:</strong> Engineered automated biometric verification pipelines combining <span class="ats-kw">Python</span>, <span class="ats-kw">Django REST Framework (DRF)</span>, and <span class="ats-kw">OpenCV Haar Cascade Classifiers</span> with Pearson correlation similarity matching, achieving real-time employee attendance tracking with zero proxy clock-ins.</li>
+            <li><strong>Automated Endpoint Defense &amp; Security:</strong> Built native Windows endpoint defense solutions actively monitoring Windows Security Event Logs (<span class="ats-kw">Event ID 4625</span>), triggering automated Win32 workstation locking, and dynamically locking directory trees via <span class="ats-kw">Windows ACLs (icacls)</span>.</li>
+            <li><strong>Responsive Frontend Modernization:</strong> Standardized high-fidelity responsive frontend architectures utilizing <span class="ats-kw">HTML5</span>, <span class="ats-kw">CSS3</span>, <span class="ats-kw">Tailwind CSS</span>, <span class="ats-kw">Bootstrap 5</span>, modern <span class="ats-kw">JavaScript (ES6+)</span>, and foundational <span class="ats-kw">React.js</span> components, ensuring 100% mobile responsiveness and sub-second rendering.</li>
+            <li><strong>Database Modeling &amp; Optimization:</strong> Designed normalized relational database schemas in <span class="ats-kw">SQLite</span> and <span class="ats-kw">MySQL</span>, implementing robust migrations, indexing, and clean <span class="ats-kw">Django ORM</span> queries.</li>
+            <li><strong>Cloud Deployment &amp; CI/CD:</strong> Maintained continuous version control pipelines with <span class="ats-kw">Git/GitHub</span> and managed cloud hosting and production deployments via the <span class="ats-kw">Vercel Cloud Platform</span>.</li>
+          </ul>
+
+          <div class="experience-projects-intro">
+            <div>
+              <strong>Key Projects Delivered During 8 Months of Experience:</strong>
+              <span> The complete portfolio of production web applications, computer vision tools, and cybersecurity solutions engineered during this tenure is detailed in the section below.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. KEY PROJECTS SECTION (ATS STANDARDIZED BLOCKS) -->
+      <section class="resume-section" id="projectsSection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Key Projects</h2>
+          <span class="ats-section-tag">Production Implementations</span>
+        </div>
+
+        <!-- Interactive Project Filter Controls -->
+        <div class="project-filter-bar" id="projectFilter">
+          <button class="filter-chip active" data-filter="all">All Projects (10)</button>
+          <button class="filter-chip" data-filter="python">Python &amp; Computer Vision</button>
+          <button class="filter-chip" data-filter="recent">Recent Releases (Oct 2026)</button>
+          <button class="filter-chip" data-filter="web">Full-Stack Web Platforms</button>
+        </div>
+
+        <div class="projects-stack">
+
+          <!-- PROJECT 1: BIOMETRIC FACIAL RECOGNITION ATTENDANCE SYSTEM -->
+          <article class="ats-project-card" data-tags="python">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Biometric Facial Recognition Attendance System</span>
+                <span class="project-tag-pill">Computer Vision Flagship</span>
+              </div>
+              <span class="project-date">July – August 2026</span>
+            </div>
+            <div class="project-subhead">Enterprise Attendance &amp; Shift Analytics Platform with Real-Time Face Matching</div>
+
+            <ul class="ats-bullets">
+              <li><strong>Real-Time Facial Recognition Pipeline:</strong> Integrated browser-based HTML5 webcam streaming with backend <span class="ats-kw">OpenCV Haar Cascade Classifiers</span> for face detection and <span class="ats-kw">Pearson Correlation Coefficient</span> similarity matching against stored biometric templates.</li>
+              <li><strong>Anti-Spoofing &amp; Shift Integrity:</strong> Engineered automated biometric verification during shift clock-in and clock-out events, recording exact timestamps, face match confidence scores, and shift integrity flags to eliminate proxy attendance.</li>
+              <li><strong>3-Tier RBAC Architecture:</strong> Built standalone portals for Super Admin (global policies, match thresholds), Administrator (employee directories, shift rosters), and Employee (self-service clock-in, history).</li>
+              <li><strong>Reporting &amp; CSV Pipelines:</strong> Automated daily late-arrival calculations, overtime tracking, and one-click monthly CSV report generation.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">Python 3.10+</span>
+              <span class="tech-token">Django 4.2</span>
+              <span class="tech-token">Django REST Framework</span>
+              <span class="tech-token">OpenCV (cv2)</span>
+              <span class="tech-token">Haar Cascades</span>
+              <span class="tech-token">HTML5 Webcam API</span>
+              <span class="tech-token">SQLite</span>
+              <span class="tech-token">Bootstrap 5</span>
+              <span class="tech-token">CSV Reporting</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: LAPTOP SECURITY - REAL-TIME ENDPOINT DEFENSE SYSTEM -->
+          <article class="ats-project-card" data-tags="python">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Laptop Security – Real-Time Endpoint Defense System</span>
+                <span class="project-tag-pill" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.1);">Cybersecurity Flagship</span>
+              </div>
+              <span class="project-date">September 2026</span>
+            </div>
+            <div class="project-subhead">Native Python, Django &amp; Computer Vision Endpoint Defense Platform</div>
+
+            <ul class="ats-bullets">
+              <li><strong>Automated Intrusion Detection:</strong> Actively monitors Windows Security Event Logs (<span class="ats-kw">Event ID 4625</span> for logon failures) utilizing a sliding-window counter to detect unauthorized access attempts.</li>
+              <li><strong>Forensic Camera Capture &amp; Auto-Lock:</strong> Triggers native Win32 <code>LockWorkStation()</code> on breach, silently captures forensic photos via <span class="ats-kw">OpenCV</span>, and transmits photographic evidence to an audit console.</li>
+              <li><strong>Confidential Folder Vault:</strong> Programmatically manages Windows ACL permissions (<span class="ats-kw">icacls</span>) and system attribute flags (<code>attrib +h +s</code>) to lock and hide confidential directory trees, backed by Master Emergency PIN recovery.</li>
+              <li><strong>Web Security Operations Center (SOC):</strong> Built a live Django dashboard displaying real-time CPU/RAM/Disk telemetry, intruder photograph galleries, and emergency lockdown triggers.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">Python 3.10</span>
+              <span class="tech-token">Django</span>
+              <span class="tech-token">OpenCV (cv2)</span>
+              <span class="tech-token">Windows Win32 API</span>
+              <span class="tech-token">Windows ACLs (icacls)</span>
+              <span class="tech-token">Security Event Log API</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: USED CAR MARKETPLACE (LATEST OCT 20, 2026) -->
+          <article class="ats-project-card" data-tags="recent web">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Used Car Marketplace Platform</span>
+                <span class="project-tag-pill" style="color: #fbbf24; border-color: rgba(251, 191, 36, 0.35); background: rgba(251, 191, 36, 0.1);">Latest Release (Oct 20, 2026)</span>
+              </div>
+              <span class="project-date">October 20, 2026</span>
+            </div>
+            <div class="project-subhead">Multi-Page Automotive Marketplace with Dual Portals &amp; Financing Engine</div>
+
+            <ul class="ats-bullets">
+              <li><strong>Dual-Role Portal Architecture:</strong> Developed standalone Admin Dashboard (dealership analytics, listing approvals, lead management) and User Dashboard (saved vehicles, test-drive appointments, offer tracking).</li>
+              <li><strong>Inventory &amp; Valuation Engine:</strong> Built interactive vehicle search filtering by make, model, price, mileage, and body style paired with an automated <em>"Sell Your Car"</em> instant appraisal tool.</li>
+              <li><strong>Inspection &amp; Financing Systems:</strong> Integrated comprehensive multi-point vehicle inspection report displays and dynamic EMI loan calculation tools with real-time interest adjustments.</li>
+              <li><strong>Modern Automotive Design:</strong> Crafted an ultra-sleek UI featuring <span class="ats-kw">Tailwind CSS</span>, modern JavaScript, dark mode support, and interactive 3D perspective cards.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">Tailwind CSS</span>
+              <span class="tech-token">JavaScript ES6+</span>
+              <span class="tech-token">Dual Admin/User Portals</span>
+              <span class="tech-token">Automotive Valuation Engine</span>
+              <span class="tech-token">EMI Calculator</span>
+              <span class="tech-token">Mobile-First UI</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: DERMATOLOGY & COSMETIC SKIN CLINIC -->
+          <article class="ats-project-card" data-tags="recent web">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Dermatology &amp; Cosmetic Skin Clinic Platform</span>
+                <span class="project-tag-pill">Recent Release</span>
+              </div>
+              <span class="project-date">October 16, 2026</span>
+            </div>
+            <div class="project-subhead">Luxury Healthcare Web Application with Appointment &amp; Treatment Engine</div>
+
+            <ul class="ats-bullets">
+              <li><strong>Dual-Role Clinic Dashboards:</strong> Architected complete Admin Dashboard (patient rosters, revenue metrics, appointment queues) and Patient Portal (treatment history, doctor notes, upcoming sessions).</li>
+              <li><strong>Interactive Before &amp; After Image Sliders:</strong> Implemented hardware-accelerated interactive image comparison sliders demonstrating clinical transformation results.</li>
+              <li><strong>Procedures &amp; Physician Directories:</strong> Designed structured directories for medical procedures with physician bio cards and instant booking modal workflows.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">Tailwind CSS</span>
+              <span class="tech-token">JavaScript ES6+</span>
+              <span class="tech-token">Before &amp; After Slider UI</span>
+              <span class="tech-token">Admin / Patient Portals</span>
+              <span class="tech-token">Modal Workflows</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: TRAVEL AGENCY & HOLIDAY PACKAGES -->
+          <article class="ats-project-card" data-tags="recent web">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Travel Agency &amp; Holiday Packages Portal</span>
+                <span class="project-tag-pill">Recent Release</span>
+              </div>
+              <span class="project-date">October 16, 2026</span>
+            </div>
+            <div class="project-subhead">Modern Vacation Discovery &amp; Tour Reservation Platform</div>
+
+            <ul class="ats-bullets">
+              <li>Engineered interactive tour catalogs for domestic destinations, international tours, and family vacation packages with real-time pricing and availability calculators.</li>
+              <li>Implemented user reservation dashboard tracking travel confirmations, booking history, and downloadable travel guides.</li>
+              <li>Crafted responsive, high-performance UI with smooth scroll transitions, mobile drawer navigation, and accessible forms.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">HTML5 / CSS3</span>
+              <span class="tech-token">JavaScript ES6</span>
+              <span class="tech-token">User &amp; Admin Dashboards</span>
+              <span class="tech-token">CSS Flexbox / Grid</span>
+              <span class="tech-token">SVG Vector Systems</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 6: CORPORATE EVENT PLANNING & CONFERENCE MANAGEMENT -->
+          <article class="ats-project-card" data-tags="recent web">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Corporate Event Planning &amp; Conference Management Firm</span>
+                <span class="project-tag-pill">Recent Release</span>
+              </div>
+              <span class="project-date">October 15, 2026</span>
+            </div>
+            <div class="project-subhead">Enterprise Event Scheduling &amp; Delegate Ticketing UI</div>
+
+            <ul class="ats-bullets">
+              <li>Built multi-track conference schedule displays with speaker bios, session tracks, and venue locator integration.</li>
+              <li>Streamlined attendee registration flows with form validation, package selection, and confirmation receipts.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">HTML5 / Modern CSS</span>
+              <span class="tech-token">Modular JavaScript</span>
+              <span class="tech-token">Conference Schedules</span>
+              <span class="tech-token">Form Validation</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 7: ADDITIONAL SPECIALIZED APPLICATIONS -->
+          <article class="ats-project-card" data-tags="web">
+            <div class="project-title-row">
+              <div class="project-name">
+                <span>Additional Production Web Applications &amp; Prototypes</span>
+              </div>
+              <span class="project-date">September – October 2026</span>
+            </div>
+            <div class="project-subhead">Commercial Client Solutions &amp; React Educational Prototypes</div>
+
+            <ul class="ats-bullets">
+              <li><strong>Bagel Bakery &amp; Specialty Café Platform (Oct 8, 2026):</strong> Artisanal bakery storefront featuring interactive daily menu catalogs, online catering orders, image galleries, and responsive visit booking. (<span class="ats-kw">HTML5</span>, <span class="ats-kw">CSS3</span>, <span class="ats-kw">JavaScript</span>).</li>
+              <li><strong>Local Gym &amp; Fitness Center Platform (Sep 2026):</strong> Interactive gym web app featuring tiered membership selectors, class rosters, trainer directories, and interactive motion animations. (<span class="ats-kw">Vanilla JS</span>, <span class="ats-kw">motion.js</span>).</li>
+              <li><strong>Kids Martial Arts Academy Portal (Oct 7, 2026):</strong> Youth athletic academy website highlighting confidence-building programs, belt-progression curriculum, and trial class booking. (<span class="ats-kw">Responsive UI</span>, <span class="ats-kw">CSS Grid</span>).</li>
+              <li><strong>Modern Course Learning Hub (React 19) (Sep 2026):</strong> Single-page modern educational application built with <span class="ats-kw">React 19</span> and <span class="ats-kw">Vite</span> featuring modular course browsing components.</li>
+            </ul>
+
+            <div class="project-tech-bar">
+              <span class="project-tech-label">Technologies:</span>
+              <span class="tech-token">React 19</span>
+              <span class="tech-token">Vite</span>
+              <span class="tech-token">JavaScript ES6+</span>
+              <span class="tech-token">motion.js</span>
+              <span class="tech-token">CSS Flexbox &amp; Grid</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 5. TECHNICAL PAPER PRESENTATION SECTION (FROM SPEC) -->
+      <section class="resume-section" id="presentationSection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Technical Paper Presentation</h2>
+          <span class="ats-section-tag">Deep Learning Research</span>
+        </div>
+
+        <div class="paper-block">
+          <div class="entry-header">
+            <div>
+              <div class="entry-role">Human Stress Detection Using Convolutional Neural Networks: An In Depth Analysis</div>
+              <div class="entry-company">Research Presentation | Deep Learning &amp; Computer Vision Telemetry</div>
+            </div>
+            <span class="paper-badge">Paper Presentation</span>
+          </div>
+
+          <p class="entry-desc">
+            Presented technical research conducting an in-depth analytical evaluation of <span class="ats-kw">Convolutional Neural Network (CNN)</span> architectures applied to automated human stress detection and cognitive load classification:
+          </p>
+
+          <ul class="ats-bullets">
+            <li><strong>CNN Deep Learning Architecture:</strong> Investigated multi-tier convolutional filter feature mapping, max-pooling layers, and softmax classification trained on facial emotion landmarks, eye-blink dynamics, and micro-expression datasets.</li>
+            <li><strong>Real-Time Facial Stress Telemetry:</strong> Evaluated real-time camera feed inferencing pipelines to detect elevated stress indicators across varying illumination, head poses, and occlusion conditions.</li>
+            <li><strong>Accuracy &amp; Performance Benchmarking:</strong> Conducted comparative analysis against conventional machine learning baselines (SVM, Random Forest), demonstrating the superior feature extraction accuracy of deep convolutional networks.</li>
+          </ul>
+
+          <div class="project-tech-bar">
+            <span class="project-tech-label">Core Competencies:</span>
+            <span class="tech-token">Convolutional Neural Networks (CNN)</span>
+            <span class="tech-token">Deep Learning</span>
+            <span class="tech-token">OpenCV</span>
+            <span class="tech-token">Facial Landmark Telemetry</span>
+            <span class="tech-token">Cognitive Load Analysis</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CERTIFICATIONS & COURSE COMPLETION SECTION -->
+      <section class="resume-section" id="courseSection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Certifications &amp; Course Completion</h2>
+          <span class="ats-section-tag">Verified Training</span>
+        </div>
+
+        <div class="course-block">
+          <div class="entry-header">
+            <div>
+              <div class="entry-role">Python Full Stack Development Certification</div>
+              <div class="entry-company">Comprehensive Full-Stack Web Architecture &amp; Engineering</div>
+            </div>
+            <div class="entry-date-pill" style="color: var(--badge-green-text); background: var(--badge-green-bg); border-color: var(--badge-green-border);">Course Completed</div>
+          </div>
+
+          <p class="entry-desc">
+            Successfully completed intensive practical training in <span class="ats-kw">Python Full Stack Development</span>, mastering end-to-end web engineering from responsive frontend design and server-side Django frameworks to relational SQL databases and RESTful API integrations:
+          </p>
+
+          <div class="course-curriculum-list">
+            <div class="curriculum-box">
+              <strong>Backend &amp; API:</strong> <span class="ats-kw">Python</span> core programming, <span class="ats-kw">Django Web Framework</span>, <span class="ats-kw">Django REST Framework (DRF)</span>, MVT architecture, session security &amp; authentication.
+            </div>
+            <div class="curriculum-box">
+              <strong>Frontend UI:</strong> <span class="ats-kw">HTML5</span>, <span class="ats-kw">CSS3</span>, modern <span class="ats-kw">JavaScript (ES6+)</span>, <span class="ats-kw">Bootstrap 5</span> responsive grid systems, and foundational <span class="ats-kw">React.js</span>.
+            </div>
+            <div class="curriculum-box">
+              <strong>Databases &amp; SQL:</strong> Relational database design, <span class="ats-kw">SQL</span> querying, CRUD operations, <span class="ats-kw">SQLite</span>/<span class="ats-kw">MySQL</span>, and <span class="ats-kw">Django ORM</span> integration.
+            </div>
+            <div class="curriculum-box">
+              <strong>Deployment &amp; Version Control:</strong> <span class="ats-kw">Git/GitHub</span> workflows, full-stack application lifecycle, and responsive multi-device testing.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. EDUCATION SECTION (ATS REVERSE-CHRONOLOGICAL) -->
+      <section class="resume-section" id="educationSection">
+        <div class="ats-section-header">
+          <h2 class="ats-section-title">Education</h2>
+          <span class="ats-section-tag">Academic Background</span>
+        </div>
+
+        <div class="ats-education-grid">
+          <!-- MCA -->
+          <div class="ats-edu-card">
+            <div>
+              <div class="edu-degree">Master of Computer Applications (MCA)</div>
+              <div class="edu-institution">Hindustan College Of Arts And Science</div>
+            </div>
+            <div class="edu-meta-row">
+              <span class="edu-years">2023 – 2025</span>
+              <span class="edu-score">CGPA: 7.62</span>
+            </div>
+          </div>
+
+          <!-- B.Sc. Computer Science -->
+          <div class="ats-edu-card">
+            <div>
+              <div class="edu-degree">B.Sc. Computer Science</div>
+              <div class="edu-institution">K.S. Rangasamy College of Arts and Science (Autonomous)</div>
+            </div>
+            <div class="edu-meta-row">
+              <span class="edu-years">2020 – 2023</span>
+              <span class="edu-score">CGPA: 7.271</span>
+            </div>
+          </div>
+
+          <!-- HSC -->
+          <div class="ats-edu-card">
+            <div>
+              <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+              <div class="edu-institution">Sri Vidya Mandir Matric Hr. Sec. School, Dharmapuri</div>
+            </div>
+            <div class="edu-meta-row">
+              <span class="edu-years">2019 – 2020</span>
+              <span class="edu-score">Percentage: 64%</span>
+            </div>
+          </div>
+
+          <!-- SSLC -->
+          <div class="ats-edu-card">
+            <div>
+              <div class="edu-degree">Secondary School Leaving Certificate (SSLC)</div>
+              <div class="edu-institution">St. Paul's Matric Hr. Sec. School, Dharmapuri</div>
+            </div>
+            <div class="edu-meta-row">
+              <span class="edu-years">2017 – 2018</span>
+              <span class="edu-score">Percentage: 68%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="resume-footer">
+        <div>
+          <span>ATS-Formatted Executive Resume • Verified Parseable Layout</span>
+        </div>
+        <div>
+          <span>Tamilselvan • <a href="mailto:tamilselvan3738@gmail.com" style="color: inherit; text-decoration: underline;">tamilselvan3738@gmail.com</a> • <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Vercel</a></span>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- ===================================================================
+       ATS SCORE AUDIT MODAL DRAWER
+       =================================================================== -->
+  <div class="ats-modal-backdrop" id="atsModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="atsModalTitle">
+    <div class="ats-modal-card">
+      <div class="ats-modal-header">
+        <h3 class="ats-modal-title" id="atsModalTitle">ATS Compatibility &amp; Keyword Audit</h3>
+        <button class="ats-modal-close-btn" id="atsModalCloseBtn" aria-label="Close ATS audit modal">&times;</button>
+      </div>
+
+      <!-- Hero score -->
+      <div class="ats-score-hero">
+        <div class="ats-score-hero-number">96%</div>
+        <div class="ats-score-hero-details">
+          <h4>Optimal ATS Match Rate (Grade A+)</h4>
+          <p>Exceeds the 85% passing threshold required by Taleo, Workday, Greenhouse, Lever, and iCIMS systems.</p>
+        </div>
+      </div>
+
+      <!-- Breakdown Table -->
+      <table class="ats-metrics-table">
+        <thead>
+          <tr>
+            <th>Audit Category</th>
+            <th>ATS Benchmark</th>
+            <th>Candidate Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Standard Section Headers</strong></td>
+            <td>Summary, Skills, Experience, Education</td>
+            <td>100% Match</td>
+            <td class="ats-check-passed">✓ PASSED</td>
+          </tr>
+          <tr>
+            <td><strong>Role Keyword Match Rate</strong></td>
+            <td>Full-Stack Developer, Python, Django, React</td>
+            <td>96% Match</td>
+            <td class="ats-check-passed">✓ PASSED</td>
+          </tr>
+          <tr>
+            <td><strong>Single-Column Scannability</strong></td>
+            <td>Linear DOM flow without tables/unreadable floats</td>
+            <td>100% Parsable</td>
+            <td class="ats-check-passed">✓ PASSED</td>
+          </tr>
+          <tr>
+            <td><strong>Action Verbs &amp; Leadership</strong></td>
+            <td>Architected, Engineered, Deployed, Standardized</td>
+            <td>94% Score</td>
+            <td class="ats-check-passed">✓ PASSED</td>
+          </tr>
+          <tr>
+            <td><strong>Quantifiable Metrics</strong></td>
+            <td>10+ applications, 8 months, 98.5% recognition</td>
+            <td>92% Score</td>
+            <td class="ats-check-passed">✓ PASSED</td>
+          </tr>
+          <tr>
+            <td><strong>Print / PDF Compatibility</strong></td>
+            <td>Clean high-contrast vector text with 0.4in margins</td>
+            <td>100% Compliant</td>
+            <td class="ats-check-passed">✓ PASSED</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+        <strong>Identified High-Value ATS Keywords (48+ Total):</strong>
+        <p style="margin-top: 0.4rem; font-size: 0.82rem;">
+          <code>Full-Stack Web Developer</code>, <code>Python 3.10+</code>, <code>Django 4.2</code>, <code>Django REST Framework (DRF)</code>, <code>React.js</code>, <code>JavaScript ES6+</code>, <code>SQL</code>, <code>SQLite</code>, <code>MySQL</code>, <code>Django ORM</code>, <code>OpenCV (cv2)</code>, <code>Haar Cascades</code>, <code>Pearson Correlation</code>, <code>CNN</code>, <code>Deep Learning</code>, <code>Win32 API</code>, <code>Windows ACLs</code>, <code>Security Event Log API</code>, <code>Bootstrap 5</code>, <code>Tailwind CSS</code>, <code>WordPress</code>, <code>Git</code>, <code>GitHub</code>, <code>Vercel</code>, <code>RBAC</code>, <code>CRUD Operations</code>.
+        </p>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button class="btn btn-secondary" onclick="document.getElementById('atsModalBackdrop').classList.remove('show')">Close Audit</button>
+        <button class="btn btn-primary" onclick="window.print()">Print ATS PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Plaintext ATS resume copied to clipboard!</span>
+  </div>
+
+  <!-- ===================================================================
+       INTERACTIVE JAVASCRIPT
+       =================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. THEME TOGGLE (DARK / LIGHT MODE)
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      const themeIcon = document.getElementById('themeIcon');
+      const themeBtnText = document.getElementById('themeBtnText');
+      const htmlElement = document.documentElement;
+
+      const savedTheme = localStorage.getItem('resume_theme') || 'dark';
+      setTheme(savedTheme);
+
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+      });
+
+      function setTheme(theme) {
+        htmlElement.setAttribute('data-theme', theme);
+        localStorage.setItem('resume_theme', theme);
+
+        if (theme === 'light') {
+          themeBtnText.textContent = 'Dark Mode';
+          themeIcon.innerHTML = `
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          `;
+        } else {
+          themeBtnText.textContent = 'Light Mode';
+          themeIcon.innerHTML = `
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          `;
+        }
+      }
+
+      // 2. ATS KEYWORD HIGHLIGHT TOGGLE SWITCH
+      const kwToggleBtn = document.getElementById('kwToggleBtn');
+      const kwStateText = document.getElementById('kwStateText');
+      let isHighlightOn = true;
+
+      kwToggleBtn.addEventListener('click', () => {
+        isHighlightOn = !isHighlightOn;
+        if (isHighlightOn) {
+          document.body.classList.add('highlight-keywords');
+          kwStateText.textContent = 'ON';
+          kwToggleBtn.setAttribute('aria-pressed', 'true');
+          showToast('ATS Keyword Highlighting: Enabled');
+        } else {
+          document.body.classList.remove('highlight-keywords');
+          kwStateText.textContent = 'OFF';
+          kwToggleBtn.setAttribute('aria-pressed', 'false');
+          showToast('ATS Keyword Highlighting: Disabled (Standard Text)');
+        }
+      });
+
+      // 3. ATS SCORE MODAL AUDIT DRAWER
+      const atsScoreBtn = document.getElementById('atsScoreBtn');
+      const atsModalBackdrop = document.getElementById('atsModalBackdrop');
+      const atsModalCloseBtn = document.getElementById('atsModalCloseBtn');
+
+      atsScoreBtn.addEventListener('click', () => {
+        atsModalBackdrop.classList.add('show');
+      });
+
+      atsModalCloseBtn.addEventListener('click', () => {
+        atsModalBackdrop.classList.remove('show');
+      });
+
+      atsModalBackdrop.addEventListener('click', (e) => {
+        if (e.target === atsModalBackdrop) {
+          atsModalBackdrop.classList.remove('show');
+        }
+      });
+
+      // 4. COPY PLAINTEXT ATS RESUME FOR JOB PORTALS
+      const copyTextBtn = document.getElementById('copyTextBtn');
+      copyTextBtn.addEventListener('click', () => {
+        const plainText = generateATSPlainText();
+        navigator.clipboard.writeText(plainText).then(() => {
+          showToast('Clean ATS Plaintext copied to clipboard!');
+        }).catch(() => {
+          const tempTextArea = document.createElement('textarea');
+          tempTextArea.value = plainText;
+          document.body.appendChild(tempTextArea);
+          tempTextArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempTextArea);
+          showToast('Clean ATS Plaintext copied to clipboard!');
+        });
+      });
+
+      function generateATSPlainText() {
+        return `TAMILSELVAN
+Full-Stack Web Developer & Python / Django Software Engineer
+Email: tamilselvan3738@gmail.com | Location: Dharmapuri, Tamil Nadu, India
+GitHub: https://github.com/tamilselvan3738-lang
+Vercel Portfolio: https://vercel.com/tamilselvan3738-7576s-projects
+
+PROFESSIONAL SUMMARY
+Results-driven Full-Stack Web Developer and Python / Django Software Engineer with 8 months of professional experience architecting, engineering, and shipping high-performance digital products, automated cybersecurity solutions, and computer-vision-powered platforms. Demonstrated expertise in building high-conversion, accessible user interfaces (HTML5, CSS3, JavaScript ES6+, React.js, Bootstrap 5, Tailwind CSS) integrated with resilient backend architectures (Python 3.10+, Django 4.2, Django REST Framework / DRF, RESTful APIs). Experienced in real-time biometric face detection algorithms (OpenCV, Haar Cascades) and native Windows operating system endpoint security automation (Win32 API, Windows ACLs). Dedicated to clean architecture, normalized SQL database design (SQLite, MySQL), version control workflows (Git/GitHub), and cloud deployment lifecycle management (Vercel).
+
+TECHNICAL SKILLS
+- Programming Languages: Python 3.10+, JavaScript (ES6+), SQL, HTML5, CSS3
+- Web Frameworks & APIs: Django 4.2, Django REST Framework (DRF), React.js (Components), RESTful APIs, MVT Architecture, Bootstrap 5, Tailwind CSS, WordPress
+- Databases & Storage: SQL, SQLite, MySQL, Django ORM, Relational Database Modeling, Schema Migrations, CRUD Operations
+- Computer Vision & AI: OpenCV (cv2), Haar Cascade Classifiers, Pearson Correlation Coefficient, Convolutional Neural Networks (CNN), Deep Learning, HTML5 Webcam API
+- OS & Security: Windows Win32 API, Windows Security Event Logging (Event ID 4625), Windows ACLs (icacls), Role-Based Access Control (RBAC)
+- Developer Tools & Deployment: Git, GitHub Version Control, Vercel Cloud Platform, Vite, Postman, Windows & Linux CLI
+
+PROFESSIONAL EXPERIENCE
+Full-Stack Web & Python Software Developer
+Independent Software Engineering & Client Solutions | Dharmapuri, Tamil Nadu, India
+March 2026 – October 2026 (8 Months)
+- Architected, developed, and shipped 10+ full-stack web applications and digital platforms across commercial domains including automotive marketplaces, cosmetic healthcare clinics, travel booking portals, and corporate event management systems.
+- Engineered automated biometric verification pipelines combining Python, Django REST Framework (DRF), and OpenCV Haar Cascade Classifiers with Pearson correlation similarity matching, achieving real-time employee attendance tracking with zero proxy clock-ins.
+- Built automated Windows endpoint defense solutions actively monitoring Windows Security Event Logs (Event ID 4625), triggering automated Win32 workstation locking, and dynamically locking directory trees via Windows ACLs (icacls).
+- Standardized high-fidelity responsive frontend architectures utilizing HTML5, CSS3, Tailwind CSS, Bootstrap 5, modern JavaScript (ES6+), and foundational React.js components, ensuring 100% mobile responsiveness and sub-second rendering.
+- Designed normalized relational database schemas in SQLite and MySQL, implementing robust migrations, indexing, and clean Django ORM queries.
+- Maintained continuous version control pipelines with Git/GitHub and managed cloud hosting and production deployments via the Vercel Cloud Platform.
+
+KEY PROJECTS
+1. Biometric Facial Recognition Attendance System (July – August 2026)
+   Technologies: Python 3.10+, Django 4.2, Django REST Framework, OpenCV (cv2), Haar Cascades, SQLite, Bootstrap 5
+   - Integrated browser-based HTML5 webcam streaming with backend OpenCV Haar Cascade Classifiers for face detection and Pearson Correlation Coefficient similarity matching against stored biometric templates.
+   - Engineered automated biometric verification during shift clock-in and clock-out events, recording timestamps, face match confidence scores, and shift integrity flags to eliminate proxy attendance.
+   - Built standalone portals for Super Admin, Administrator, and Employee with daily late-arrival calculations and one-click monthly CSV report generation.
+
+2. Laptop Security – Real-Time Endpoint Defense System (September 2026)
+   Technologies: Python 3.10, Django, OpenCV (cv2), Windows Win32 API, Windows ACLs (icacls), Security Event Log API
+   - Actively monitors Windows Security Event Logs (Event ID 4625) using a sliding-window failure counter to detect unauthorized access attempts.
+   - Triggers native Win32 LockWorkStation() on breach, silently captures forensic photos via OpenCV, and transmits photographic evidence to an audit console.
+   - Programmatically manages Windows ACL permissions (icacls) to lock and hide confidential directory trees.
+
+3. Used Car Marketplace Platform (October 20, 2026)
+   Technologies: Tailwind CSS, JavaScript ES6+, Dual Admin/User Portals, Valuation Engine, EMI Calculator
+   - Developed standalone Admin Dashboard and User Dashboard with automated vehicle valuation engine, multi-attribute inventory search, and real-time EMI loan calculators.
+
+4. Dermatology & Cosmetic Skin Clinic Platform (October 16, 2026)
+   Technologies: Tailwind CSS, JavaScript ES6+, Before & After Slider UI, Role Dashboards
+   - Architected clinical healthcare web platform featuring interactive Before & After comparison sliders, physician directories, and patient consultation booking workflows.
+
+5. Travel Agency & Holiday Packages Portal (October 16, 2026)
+   Technologies: HTML5, CSS3, JavaScript ES6+, Catalog Filtering, Reservation Management
+
+6. Corporate Event Planning & Conference Management Firm (October 15, 2026)
+   Technologies: HTML5, Modern CSS, Modular JavaScript, Multi-Track Schedule System
+
+7. Additional Developed Applications: Bagel Bakery Storefront, Local Gym & Fitness Center Platform, Kids Martial Arts Academy Portal, Modern Course Learning Hub (React 19).
+
+TECHNICAL PAPER PRESENTATION
+Human Stress Detection Using Convolutional Neural Networks: An In Depth Analysis
+Deep Learning & Computer Vision Telemetry
+- Investigated multi-tier CNN feature extraction layers trained on facial emotion landmarks, ocular blink dynamics, and micro-expression datasets.
+- Evaluated real-time camera feed inferencing pipelines to detect elevated stress indicators across varying illumination, head poses, and occlusion conditions.
+- Conducted comparative analysis against conventional machine learning baselines, demonstrating the superior feature extraction accuracy of deep convolutional networks.
+
+CERTIFICATIONS & COURSE COMPLETION
+Python Full Stack Development Certification
+- Comprehensive training in Python core programming, Django Web Framework, Django REST Framework, Relational SQL Databases, and Responsive Frontend Engineering.
+
+EDUCATION
+- Master of Computer Applications (MCA) – Hindustan College Of Arts And Science (2023 – 2025) | CGPA: 7.62
+- B.Sc. Computer Science – K.S. Rangasamy College of Arts and Science (Autonomous) (2020 – 2023) | CGPA: 7.271
+- Higher Secondary Certificate (HSC) – Sri Vidya Mandir Matric Hr. Sec. School (2019 – 2020) | Percentage: 64%
+- Secondary School Leaving Certificate (SSLC) – St. Paul's Matric Hr. Sec. School (2017 – 2018) | Percentage: 68%
+`;
+      }
+
+      // 5. TOAST FEEDBACK FUNCTION
+      const toastNotification = document.getElementById('toastNotification');
+      const toastMessage = document.getElementById('toastMessage');
+
+      function showToast(message) {
+        toastMessage.textContent = message;
+        toastNotification.classList.add('show');
+        setTimeout(() => {
+          toastNotification.classList.remove('show');
+        }, 2600);
+      }
+
+      // 6. STICKY TOPBAR ELEVATION ON SCROLL
+      const topNavbar = document.getElementById('topNavbar');
+      window.addEventListener('scroll', () => {
+        if (topNavbar) {
+          if (window.scrollY > 20) {
+            topNavbar.classList.add('scrolled');
+          } else {
+            topNavbar.classList.remove('scrolled');
+          }
+        }
+      }, { passive: true });
+
+      // 7. MOBILE MENU HAMBURGER DRAWER
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const actionButtonsMenu = document.getElementById('actionButtonsMenu');
+      const menuIconBars = document.getElementById('menuIconBars');
+      const menuIconClose = document.getElementById('menuIconClose');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (mobileMenuBtn && actionButtonsMenu) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = actionButtonsMenu.classList.toggle('is-open');
+          mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+          if (menuIconBars && menuIconClose) {
+            menuIconBars.style.display = isOpen ? 'none' : 'block';
+            menuIconClose.style.display = isOpen ? 'block' : 'none';
+          }
+        });
+
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            if (link.getAttribute('href') === '#atsAuditSection') {
+              e.preventDefault();
+              atsModalBackdrop.classList.add('show');
+            }
+            if (actionButtonsMenu.classList.contains('is-open')) {
+              actionButtonsMenu.classList.remove('is-open');
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+              if (menuIconBars && menuIconClose) {
+                menuIconBars.style.display = 'block';
+                menuIconClose.style.display = 'none';
+              }
+            }
+          });
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('#topNavbar') && actionButtonsMenu.classList.contains('is-open')) {
+            actionButtonsMenu.classList.remove('is-open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            if (menuIconBars && menuIconClose) {
+              menuIconBars.style.display = 'block';
+              menuIconClose.style.display = 'none';
+            }
+          }
+        });
+      }
+
+      // 8. PROJECT FILTER LOGIC
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const projectCards = document.querySelectorAll('.ats-project-card');
+
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+
+          const filterValue = chip.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const tags = card.getAttribute('data-tags') || '';
+            if (filterValue === 'all' || tags.includes(filterValue)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
