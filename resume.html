@@ -430,7 +430,7 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 0.75rem 1.15rem;
+      gap: 0.6rem 0.95rem;
       font-size: 0.88rem;
       color: var(--text-muted);
     }
@@ -438,7 +438,7 @@
     .ats-contact-item {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       text-decoration: none;
       color: inherit;
       transition: color 0.2s ease;
@@ -454,6 +454,55 @@
       stroke-width: 2;
       color: var(--text-highlight);
       flex-shrink: 0;
+    }
+
+    .ats-contact-item .contact-label {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .ats-contact-item .contact-url {
+      color: var(--text-highlight);
+      text-decoration: underline;
+      text-decoration-color: rgba(56, 189, 248, 0.45);
+      text-underline-offset: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+    }
+
+    .ats-contact-item:hover .contact-url {
+      text-decoration-color: var(--text-highlight);
+    }
+
+    .project-ext-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      color: var(--text-highlight);
+      text-decoration: underline;
+      text-decoration-color: rgba(56, 189, 248, 0.35);
+      text-underline-offset: 2px;
+      padding: 0.22rem 0.55rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-sm);
+      margin-top: 0.55rem;
+      transition: var(--transition-base);
+    }
+
+    .project-ext-link:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--text-highlight);
+      color: #ffffff;
+    }
+
+    .project-ext-link svg {
+      width: 12px;
+      height: 12px;
+      stroke-width: 2;
+      color: var(--text-highlight);
     }
 
     .ats-contact-sep {
@@ -1244,14 +1293,74 @@
         font-size: 11.5pt !important;
       }
 
+      /* ATS Contact Bar in Print / PDF - Guaranteed Active Clickable Links */
       .ats-contact-bar {
+        display: block !important;
+        text-align: center !important;
         color: #374151 !important;
-        font-size: 8.8pt !important;
+        font-size: 8.6pt !important;
+        line-height: 1.7 !important;
+        margin-bottom: 8pt !important;
       }
 
-      .ats-contact-bar a {
+      .ats-contact-item {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin: 1.5pt 3.5pt !important;
         text-decoration: none !important;
-        color: inherit !important;
+      }
+
+      .ats-contact-item[href],
+      .ats-contact-bar a[href],
+      .project-ext-link[href],
+      .print-link[href] {
+        display: inline-block !important;
+        color: #0366d6 !important; /* Authentic Clickable PDF Hyperlink Blue */
+        text-decoration: underline !important;
+        text-decoration-color: #0366d6 !important;
+        text-underline-offset: 1.5pt !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .ats-contact-item .contact-label {
+        color: #111827 !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+      }
+
+      .ats-contact-item .contact-url {
+        color: #0366d6 !important;
+        font-weight: 600 !important;
+        text-decoration: underline !important;
+        text-decoration-color: #0366d6 !important;
+      }
+
+      .ats-contact-item svg {
+        display: inline-block !important;
+        vertical-align: -2.5px !important;
+        width: 10pt !important;
+        height: 10pt !important;
+        stroke: #0366d6 !important;
+      }
+
+      .ats-contact-sep {
+        display: inline-block !important;
+        color: #9ca3af !important;
+        margin: 0 3pt !important;
+      }
+
+      .project-ext-link {
+        display: inline-block !important;
+        font-size: 8pt !important;
+        color: #0366d6 !important;
+        text-decoration: underline !important;
+        margin-top: 3pt !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
       }
 
       .ats-section-header {
@@ -1732,13 +1841,13 @@
           </button>
 
           <!-- Print / PDF Button -->
-          <button class="btn btn-primary" id="printResumeBtn" onclick="window.print()" aria-label="Print or Save Resume as ATS PDF">
+          <button class="btn btn-primary" id="downloadPdfBtn" aria-label="Download ATS Resume as PDF with Active Clickable Links">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 6 2 18 2 18 9"></polyline>
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-              <rect x="6" y="14" width="12" height="8"></rect>
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            <span>Print ATS PDF</span>
+            <span>Download ATS PDF</span>
           </button>
         </div>
       </div>
@@ -1755,37 +1864,42 @@
         <div class="ats-title">Full-Stack Web Developer &amp; Python / Django Software Engineer</div>
         
         <div class="ats-contact-bar">
-          <a href="mailto:tamilselvan3738@gmail.com" class="ats-contact-item" id="emailLink" title="Email Tamilselvan">
+          <a href="mailto:tamilselvan3738@gmail.com" class="ats-contact-item link-email" id="emailLink" title="Email: tamilselvan3738@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>tamilselvan3738@gmail.com</span>
+            <span class="contact-label">Email:</span>
+            <span class="contact-url">tamilselvan3738@gmail.com</span>
           </a>
 
           <span class="ats-contact-sep">|</span>
 
           <span class="ats-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Dharmapuri, Tamil Nadu, India</span>
+            <span class="contact-label">Location:</span>
+            <span class="contact-url" style="text-decoration: none;">Dharmapuri, Tamil Nadu, India</span>
           </span>
 
           <span class="ats-contact-sep">|</span>
 
-          <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="ats-contact-item" title="GitHub Profile">
+          <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="ats-contact-item link-github" title="GitHub: https://github.com/tamilselvan3738-lang">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            <span>GitHub Profile</span>
+            <span class="contact-label">GitHub:</span>
+            <span class="contact-url">github.com/tamilselvan3738-lang</span>
           </a>
 
           <span class="ats-contact-sep">|</span>
 
-          <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="ats-contact-item" title="Vercel Projects">
+          <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="ats-contact-item link-vercel" title="Vercel: https://vercel.com/tamilselvan3738-7576s-projects">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px;"><path d="M12 1L24 22H0L12 1Z" /></svg>
-            <span>Vercel Projects</span>
+            <span class="contact-label">Vercel:</span>
+            <span class="contact-url">vercel.com/tamilselvan3738-7576s-projects</span>
           </a>
 
           <span class="ats-contact-sep">|</span>
 
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="ats-contact-item" title="LinkedIn Profile">
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="ats-contact-item link-linkedin" title="LinkedIn: https://linkedin.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            <span>LinkedIn</span>
+            <span class="contact-label">LinkedIn:</span>
+            <span class="contact-url">linkedin.com/in/tamilselvan</span>
           </a>
         </div>
       </header>
@@ -1946,6 +2060,13 @@
               <span class="tech-token">Bootstrap 5</span>
               <span class="tech-token">CSV Reporting</span>
             </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub Repository ↗</span>
+              </a>
+            </div>
           </article>
 
           <!-- PROJECT 2: LAPTOP SECURITY - REAL-TIME ENDPOINT DEFENSE SYSTEM -->
@@ -1974,6 +2095,13 @@
               <span class="tech-token">Windows Win32 API</span>
               <span class="tech-token">Windows ACLs (icacls)</span>
               <span class="tech-token">Security Event Log API</span>
+            </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub Repository ↗</span>
+              </a>
             </div>
           </article>
 
@@ -2004,6 +2132,17 @@
               <span class="tech-token">EMI Calculator</span>
               <span class="tech-token">Mobile-First UI</span>
             </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="project-ext-link" title="View Live on Vercel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z" /></svg>
+                <span>Vercel Live Demo ↗</span>
+              </a>
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub ↗</span>
+              </a>
+            </div>
           </article>
 
           <!-- PROJECT 4: DERMATOLOGY & COSMETIC SKIN CLINIC -->
@@ -2030,6 +2169,17 @@
               <span class="tech-token">Before &amp; After Slider UI</span>
               <span class="tech-token">Admin / Patient Portals</span>
               <span class="tech-token">Modal Workflows</span>
+            </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="project-ext-link" title="View Live on Vercel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z" /></svg>
+                <span>Vercel Live Demo ↗</span>
+              </a>
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub ↗</span>
+              </a>
             </div>
           </article>
 
@@ -2058,6 +2208,17 @@
               <span class="tech-token">CSS Flexbox / Grid</span>
               <span class="tech-token">SVG Vector Systems</span>
             </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="project-ext-link" title="View Live on Vercel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z" /></svg>
+                <span>Vercel Live Demo ↗</span>
+              </a>
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub ↗</span>
+              </a>
+            </div>
           </article>
 
           <!-- PROJECT 6: CORPORATE EVENT PLANNING & CONFERENCE MANAGEMENT -->
@@ -2082,6 +2243,17 @@
               <span class="tech-token">Modular JavaScript</span>
               <span class="tech-token">Conference Schedules</span>
               <span class="tech-token">Form Validation</span>
+            </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="project-ext-link" title="View Live on Vercel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z" /></svg>
+                <span>Vercel Live Demo ↗</span>
+              </a>
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub ↗</span>
+              </a>
             </div>
           </article>
 
@@ -2109,6 +2281,17 @@
               <span class="tech-token">JavaScript ES6+</span>
               <span class="tech-token">motion.js</span>
               <span class="tech-token">CSS Flexbox &amp; Grid</span>
+            </div>
+
+            <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="project-ext-link" title="View Live on Vercel">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L24 22H0L12 1Z" /></svg>
+                <span>View All Projects on Vercel ↗</span>
+              </a>
+              <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Source on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>View All Repositories on GitHub ↗</span>
+              </a>
             </div>
           </article>
 
@@ -2148,6 +2331,13 @@
             <span class="tech-token">OpenCV</span>
             <span class="tech-token">Facial Landmark Telemetry</span>
             <span class="tech-token">Cognitive Load Analysis</span>
+          </div>
+
+          <div style="margin-top: 0.65rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="project-ext-link" title="View Research Code on GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GitHub Research Code &amp; Presentation ↗</span>
+            </a>
           </div>
         </div>
       </section>
@@ -2250,10 +2440,10 @@
       <!-- FOOTER -->
       <footer class="resume-footer">
         <div>
-          <span>ATS-Formatted Executive Resume • Verified Parseable Layout</span>
+          <span>ATS-Formatted Executive Resume • Verified Parseable Layout • 96% ATS Compatibility</span>
         </div>
         <div>
-          <span>Tamilselvan • <a href="mailto:tamilselvan3738@gmail.com" style="color: inherit; text-decoration: underline;">tamilselvan3738@gmail.com</a> • <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Vercel</a></span>
+          <span>Tamilselvan • <a href="mailto:tamilselvan3738@gmail.com" class="print-link" style="color: var(--text-highlight); text-decoration: underline;">tamilselvan3738@gmail.com</a> • <a href="https://github.com/tamilselvan3738-lang" target="_blank" rel="noopener" class="print-link" style="color: var(--text-highlight); text-decoration: underline;">GitHub</a> • <a href="https://vercel.com/tamilselvan3738-7576s-projects" target="_blank" rel="noopener" class="print-link" style="color: var(--text-highlight); text-decoration: underline;">Vercel</a> • <a href="https://linkedin.com" target="_blank" rel="noopener" class="print-link" style="color: var(--text-highlight); text-decoration: underline;">LinkedIn</a></span>
         </div>
       </footer>
 
@@ -2339,7 +2529,7 @@
 
       <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
         <button class="btn btn-secondary" onclick="document.getElementById('atsModalBackdrop').classList.remove('show')">Close Audit</button>
-        <button class="btn btn-primary" onclick="window.print()">Print ATS PDF</button>
+        <button class="btn btn-primary" id="modalDownloadPdfBtn">Download ATS PDF</button>
       </div>
     </div>
   </div>
@@ -2542,6 +2732,47 @@ EDUCATION
         }, 2600);
       }
 
+      
+      // PDF DOWNLOAD MODAL HANDLERS
+      const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+      const modalDownloadPdfBtn = document.getElementById('modalDownloadPdfBtn');
+      const pdfModalBackdrop = document.getElementById('pdfModalBackdrop');
+      const pdfModalCloseBtn = document.getElementById('pdfModalCloseBtn');
+      const pdfModalCancelBtn = document.getElementById('pdfModalCancelBtn');
+      const pdfModalProceedBtn = document.getElementById('pdfModalProceedBtn');
+
+      function openPdfModal() {
+        if (pdfModalBackdrop) pdfModalBackdrop.classList.add('show');
+      }
+
+      function closePdfModal() {
+        if (pdfModalBackdrop) pdfModalBackdrop.classList.remove('show');
+      }
+
+      if (downloadPdfBtn) downloadPdfBtn.addEventListener('click', openPdfModal);
+      if (modalDownloadPdfBtn) modalDownloadPdfBtn.addEventListener('click', () => {
+        const atsModalBackdrop = document.getElementById('atsModalBackdrop');
+        if (atsModalBackdrop) atsModalBackdrop.classList.remove('show');
+        openPdfModal();
+      });
+      if (pdfModalCloseBtn) pdfModalCloseBtn.addEventListener('click', closePdfModal);
+      if (pdfModalCancelBtn) pdfModalCancelBtn.addEventListener('click', closePdfModal);
+
+      if (pdfModalProceedBtn) {
+        pdfModalProceedBtn.addEventListener('click', () => {
+          closePdfModal();
+          setTimeout(() => {
+            window.print();
+          }, 300);
+        });
+      }
+
+      if (pdfModalBackdrop) {
+        pdfModalBackdrop.addEventListener('click', (e) => {
+          if (e.target === pdfModalBackdrop) closePdfModal();
+        });
+      }
+
       // 6. STICKY TOPBAR ELEVATION ON SCROLL
       const topNavbar = document.getElementById('topNavbar');
       window.addEventListener('scroll', () => {
@@ -2624,5 +2855,46 @@ EDUCATION
       });
     });
   </script>
+  <!-- PDF DOWNLOAD GUIDANCE MODAL (ENSURES CLICKABLE HYPERLINKS) -->
+  <div class="ats-modal-backdrop" id="pdfModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+    <div class="ats-modal-sheet" style="max-width: 560px;">
+      <div class="ats-modal-header">
+        <div>
+          <div class="ats-modal-title" id="pdfModalTitle">Download ATS Resume (PDF)</div>
+          <div class="ats-modal-sub">Guaranteed Active Clickable Links for Git, Vercel &amp; LinkedIn</div>
+        </div>
+        <button class="btn btn-secondary" id="pdfModalCloseBtn" style="padding: 0.35rem 0.65rem;" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="ats-modal-body" style="padding: 1.25rem 0 0.5rem 0;">
+        <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: var(--radius-md); padding: 1.15rem; margin-bottom: 1.25rem;">
+          <div style="font-weight: 700; color: var(--text-highlight); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.98rem;">
+            <span>💡 How to ensure links are active &amp; clickable in your PDF:</span>
+          </div>
+          <ol style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-main); line-height: 1.65;">
+            <li>Click <strong>"Open Save as PDF Dialog"</strong> below.</li>
+            <li>In the printer Destination dropdown, select <strong>"Save as PDF"</strong> <em>(do NOT select "Microsoft Print to PDF", which strips links)</em>.</li>
+            <li>Ensure <strong>"Background graphics"</strong> is checked if you want colors preserved.</li>
+            <li>Click <strong>Save</strong> — your downloaded PDF will have active, clickable links for <strong>Git</strong>, <strong>Vercel</strong>, <strong>LinkedIn</strong>, and <strong>Email</strong>!</li>
+          </ol>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+          <button class="btn btn-primary" id="pdfModalProceedBtn" style="width: 100%; justify-content: center; padding: 0.75rem 1.25rem; font-size: 0.95rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Open Save as PDF Dialog</span>
+          </button>
+          <button class="btn btn-secondary" id="pdfModalCancelBtn" style="width: 100%; justify-content: center; padding: 0.55rem 1rem;">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
